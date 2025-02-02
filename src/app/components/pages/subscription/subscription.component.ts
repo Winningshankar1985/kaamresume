@@ -1,14 +1,14 @@
 import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { DashboardService } from 'src/app/shared/dashboard/dashboard.service';
+import { DashboardService } from '../../../shared/dashboard/dashboard.service';
 declare var AOS: any;
 import { PaymentpopupComponent } from '../paymentpopup/paymentpopup.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { PaymentsService } from 'src/app/shared/payments/payments.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { PaymentsService } from '../../../shared/payments/payments.service';
 import { load } from '@cashfreepayments/cashfree-js';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
-import { cashfree_return_url, env_cashfree } from 'src/environments/environment';
+import { NotificationsService } from '../../../shared/notifications/notifications.service';
+import { cashfree_return_url, env_cashfree } from '../../../../environments/environment';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 declare var Cashfree: any; // Declare Cashfree to avoid TypeScript errors
 @Component({

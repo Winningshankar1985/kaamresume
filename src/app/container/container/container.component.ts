@@ -1,18 +1,18 @@
 import { DatePipe, DOCUMENT, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, HostListener, Inject, OnDestroy, OnInit, PLATFORM_ID, Renderer2, RendererFactory2 } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { SessionstorageService } from 'src/app/shared/session/sessionstorage.service';
+import { LocalstorageService } from '../../shared/localStorage/localstorage.service';
+import { SessionstorageService } from '../../shared/session/sessionstorage.service';
 import { LoaderService } from '../../shared/loader/loader.service';
-import { AuthService } from 'src/app/shared/auth/auth.service';
+import { AuthService } from '../../shared/auth/auth.service';
 import { Router } from '@angular/router';
-import { PaymentsService } from 'src/app/shared/payments/payments.service';
+import { PaymentsService } from '../../shared/payments/payments.service';
 import { error } from 'console';
 import { Meta, Title } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
-import { TermsandconditionsComponent } from 'src/app/auth/pages/termsandconditions/termsandconditions.component';
-import { RefundpolicyComponent } from 'src/app/auth/pages/refundpolicy/refundpolicy.component';
-import { PrivacypolicyComponent } from 'src/app/auth/pages/privacypolicy/privacypolicy.component';
+import { TermsandconditionsComponent } from '../../auth/pages/termsandconditions/termsandconditions.component';
+import { RefundpolicyComponent } from '../../auth/pages/refundpolicy/refundpolicy.component';
+import { PrivacypolicyComponent } from '../../auth/pages/privacypolicy/privacypolicy.component';
 
 
 @Component({

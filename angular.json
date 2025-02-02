@@ -24,6 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": false,
             "outputPath": "dist/kaamresume",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -129,7 +130,7 @@
           "tsConfig": "tsconfig.server.json",
           "inlineStyleLanguage": "scss"
         },
-        "externalDependencies": ["@angular/material","@angular/cdk"],
+        
         "configurations": {
           "production": {
             "outputHashing": "media",
@@ -169,7 +170,7 @@
           }
         },
         "defaultConfiguration": "development",
-         "externalDependencies": ["@angular/material"],
+         
       },
       "prerender": {
         "builder": "@angular-devkit/build-angular:prerender",

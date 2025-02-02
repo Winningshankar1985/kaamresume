@@ -3,12 +3,12 @@ import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, View
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { GeneratorService } from 'src/app/shared/generator/generator.service';
+import { GeneratorService } from '../../../shared/generator/generator.service';
 import { scrolltopcomponent } from './scrolltopcomponent';
-import { resumesService } from 'src/app/shared/resume/resume.service';
+import { resumesService } from '../../../shared/resume/resume.service';
 import { Observable, catchError } from 'rxjs';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { ArrayserviceService } from 'src/app/shared/arrayservice/arrayservice.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { ArrayserviceService } from '../../../shared/arrayservice/arrayservice.service';
 
 import JSZip from 'jszip';
 import { AnyNaptrRecord } from 'dns';

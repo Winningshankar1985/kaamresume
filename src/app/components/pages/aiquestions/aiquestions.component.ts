@@ -3,11 +3,11 @@ import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, View
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ArrayserviceService } from 'src/app/shared/arrayservice/arrayservice.service';
-import { GeneratorService } from 'src/app/shared/generator/generator.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { resumesService } from 'src/app/shared/resume/resume.service';
-import { PaymentsService } from 'src/app/shared/payments/payments.service';
+import { ArrayserviceService } from '../../../shared/arrayservice/arrayservice.service';
+import { GeneratorService } from '../../../shared/generator/generator.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { resumesService } from '../../../shared/resume/resume.service';
+import { PaymentsService } from '../../../shared/payments/payments.service';
 import { catchError } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({

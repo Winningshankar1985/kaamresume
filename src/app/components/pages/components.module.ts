@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ChildcomponentModule } from "../../childComponents/childcomponent/childcomponent.module";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from 'src/app/material.module';
+import { MaterialModule } from '../../material.module';
 import { QueriesPageComponent } from './queries-page/queries-page.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { GenerateresumeComponent } from './generateresume/generateresume.component';

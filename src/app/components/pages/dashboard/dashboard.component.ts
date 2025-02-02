@@ -1,9 +1,9 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { afterRender, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-import { DashboardService } from 'src/app/shared/dashboard/dashboard.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { PaymentsService } from 'src/app/shared/payments/payments.service';
+import { DashboardService } from '../../../shared/dashboard/dashboard.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { PaymentsService } from '../../../shared/payments/payments.service';
 
 @Component({
   selector: 'app-dashboard',

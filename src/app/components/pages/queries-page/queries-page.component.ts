@@ -2,8 +2,8 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { resumesService } from 'src/app/shared/resume/resume.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { resumesService } from '../../../shared/resume/resume.service';
 
 
 @Component({

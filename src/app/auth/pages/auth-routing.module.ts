@@ -5,7 +5,7 @@ import { SignoutComponent } from './signout/signout.component';
 import { LoginV2Component } from './login-v2/login-v2.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { AboutMeComponent } from './about-me/about-me.component';
-import { AuthGaurd } from 'src/app/shared/gaurds/gaurd.service';
+import { AuthGaurd } from '../../shared/gaurds/gaurd.service';
 import { SalespageComponent } from './salespage/salespage.component';
 import { ResumeatscheckerComponent } from './resumeatschecker/resumeatschecker.component';
 import { AnalysetoolpageComponent } from './analysetoolpage/analysetoolpage.component';

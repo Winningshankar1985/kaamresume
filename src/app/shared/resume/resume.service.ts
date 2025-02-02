@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { nodeUrl, resumeApi } from 'src/environments/environment';
+import { nodeUrl, resumeApi } from '../../../environments/environment';
 import { HttpserviceService } from '../httpservice/httpservice.service';
 import { generatePDF, loadresume, renderResume } from '../serverclientdatastate/transferkeys';
 

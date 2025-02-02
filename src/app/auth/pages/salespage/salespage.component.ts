@@ -3,8 +3,8 @@ import { afterRender, Component, HostListener, Inject, OnDestroy, OnInit, PLATFO
 import { MatDialog } from '@angular/material/dialog';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth/auth.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { AuthService } from '../../../shared/auth/auth.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 import { TermsandconditionsComponent } from '../termsandconditions/termsandconditions.component';
 import { RefundpolicyComponent } from '../refundpolicy/refundpolicy.component';
 import { OauthLoginComponent } from '../oauth-login/oauth-login.component';

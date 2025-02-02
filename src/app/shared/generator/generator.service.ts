@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { baseUrl, nodeUrl } from 'src/environments/environment';
+import { baseUrl, nodeUrl } from '../../../environments/environment';
 import { LocalstorageService } from '../localStorage/localstorage.service';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { HttpserviceService } from '../httpservice/httpservice.service';

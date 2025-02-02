@@ -4,7 +4,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ChildcomponentModule } from 'src/app/childComponents/childcomponent/childcomponent.module'
+import { ChildcomponentModule } from '../../../childComponents/childcomponent/childcomponent.module'
 
 @Component({
   selector: 'app-resumeatschecker',

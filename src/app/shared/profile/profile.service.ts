@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { nodeUrl } from 'src/environments/environment';
+import { nodeUrl } from '../../../environments/environment';
 import { urlToHttpOptions } from 'url';
 import { HttpserviceService } from '../httpservice/httpservice.service';
 import { addUpdateProfile, getprofile } from '../serverclientdatastate/transferkeys';

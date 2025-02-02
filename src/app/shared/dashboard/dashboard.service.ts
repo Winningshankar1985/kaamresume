@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { LocalstorageService } from '../localStorage/localstorage.service';
-import { nodeUrl } from 'src/environments/environment';
+import { nodeUrl } from '../../../environments/environment';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { HttpserviceService } from '../httpservice/httpservice.service';
 import { getpaymentdetails, resumehistory } from '../serverclientdatastate/transferkeys';

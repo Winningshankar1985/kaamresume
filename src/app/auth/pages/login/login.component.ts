@@ -1,8 +1,8 @@
 
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth/auth.service';
+import { AuthService } from '../../../shared/auth/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { TermsandconditionsComponent } from '../termsandconditions/termsandconditions.component';
 import { RefundpolicyComponent } from '../refundpolicy/refundpolicy.component';

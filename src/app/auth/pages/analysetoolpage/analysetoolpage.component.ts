@@ -3,8 +3,8 @@ import { afterRender, Component, Inject, OnInit, PLATFORM_ID, Renderer2, Rendere
 import { MatDialog } from '@angular/material/dialog';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth/auth.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { AuthService } from '../../../shared/auth/auth.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 
 @Component({
   selector: 'app-analysetoolpage',

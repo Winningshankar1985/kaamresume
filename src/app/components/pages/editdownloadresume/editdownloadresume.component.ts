@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
-import { resumesService } from 'src/app/shared/resume/resume.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { resumesService } from '../../../shared/resume/resume.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
 @Component({

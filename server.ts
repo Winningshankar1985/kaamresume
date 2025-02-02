@@ -20,7 +20,7 @@ export function app(): express.Express {
     ? join(distFolder, 'index.original.html')
     : join(distFolder, 'index.html');
   const commonEngine = new CommonEngine();
-
+  console.log(distFolder, indexHtml, 'DIST FOLDER AND INDEX HTML');
   server.set('view engine', 'html');
   server.set('views', distFolder);
 

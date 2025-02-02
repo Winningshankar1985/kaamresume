@@ -5,7 +5,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignoutComponent } from './signout/signout.component';
-import {MaterialModule} from 'src/app/material.module';
+import {MaterialModule} from '../../material.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { MatCardModule } from '@angular/material/card';
@@ -17,12 +17,12 @@ import { RouterModule } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { OauthLoginComponent } from './oauth-login/oauth-login.component';
 import { LoginV2Component } from './login-v2/login-v2.component';
-import { authInterceptor } from 'src/app/shared/authserverinterceptor/authserverinterceptor';
+import { authInterceptor } from '../../shared/authserverinterceptor/authserverinterceptor';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideClientHydration, withHttpTransferCacheOptions } from '@angular/platform-browser';
-import { HeaderComponent } from 'src/app/childComponents/childcomponent/header/header.component';
-import { FooterComponent } from 'src/app/childComponents/childcomponent/footer/footer.component';
-import { ChildcomponentModule } from 'src/app/childComponents/childcomponent/childcomponent.module';
+import { HeaderComponent } from '../../childComponents/childcomponent/header/header.component';
+import { FooterComponent } from '../../childComponents/childcomponent/footer/footer.component';
+import { ChildcomponentModule } from '../../childComponents/childcomponent/childcomponent.module';
 import { SalespageComponent } from './salespage/salespage.component';
 import { AnalysetoolpageComponent } from './analysetoolpage/analysetoolpage.component';
 @NgModule({

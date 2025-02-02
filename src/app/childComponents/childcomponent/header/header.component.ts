@@ -3,11 +3,11 @@ import { Component, Inject, OnInit, PLATFORM_ID, Renderer2, RendererFactory2 } f
 import { MatDialog } from '@angular/material/dialog';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OauthLoginComponent } from 'src/app/auth/pages/oauth-login/oauth-login.component';
-import { RefundpolicyComponent } from 'src/app/auth/pages/refundpolicy/refundpolicy.component';
-import { TermsandconditionsComponent } from 'src/app/auth/pages/termsandconditions/termsandconditions.component';
-import { AuthService } from 'src/app/shared/auth/auth.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { OauthLoginComponent } from '../../../auth/pages/oauth-login/oauth-login.component';
+import { RefundpolicyComponent } from '../../../auth/pages/refundpolicy/refundpolicy.component';
+import { TermsandconditionsComponent } from '../../../auth/pages/termsandconditions/termsandconditions.component';
+import { AuthService } from '../../../shared/auth/auth.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 
 @Component({
   selector: 'app-header',

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { baseUrl, nodeUrl, nodeUrl0 } from 'src/environments/environment';
+import { baseUrl, nodeUrl, nodeUrl0 } from '../../../environments/environment';
 import { LocalstorageService } from '../localStorage/localstorage.service';
 import { Observable, Subject } from 'rxjs';
 import { HttpserviceService } from '../httpservice/httpservice.service';

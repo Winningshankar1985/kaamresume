@@ -4,8 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularStripeService } from '@fireflysemantics/angular-stripe-service';
 import { catchError } from 'rxjs';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { PaymentsService } from 'src/app/shared/payments/payments.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { PaymentsService } from '../../../shared/payments/payments.service';
 
 @Component({
   selector: 'app-payments',

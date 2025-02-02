@@ -1,10 +1,10 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TextEditorComponent } from 'src/app/childComponents/childcomponent/text-editor/text-editor.component';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
-import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
-import { ProfileService } from 'src/app/shared/profile/profile.service';
+import { TextEditorComponent } from '../../../childComponents/childcomponent/text-editor/text-editor.component';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
+import { NotificationsService } from '../../../shared/notifications/notifications.service';
+import { ProfileService } from '../../../shared/profile/profile.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',

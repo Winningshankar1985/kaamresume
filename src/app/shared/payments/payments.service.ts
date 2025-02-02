@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { nodeUrl } from 'src/environments/environment';
+import { nodeUrl } from '../../../environments/environment';
 import { HttpserviceService } from '../httpservice/httpservice.service';
 import { cashfreecreateorder, cashfreegetorderconfirmation, usagecheck, usagedownloadcount } from '../serverclientdatastate/transferkeys';
 

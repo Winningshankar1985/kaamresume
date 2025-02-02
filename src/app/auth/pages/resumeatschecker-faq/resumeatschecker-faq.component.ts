@@ -2,7 +2,7 @@ import { CommonModule, DOCUMENT, isPlatformBrowser, isPlatformServer } from '@an
 import { afterRender, Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-import { ChildcomponentModule } from 'src/app/childComponents/childcomponent/childcomponent.module';
+import { ChildcomponentModule } from '../../../childComponents/childcomponent/childcomponent.module';
 
 @Component({
   selector: 'app-resumeatschecker-faq',

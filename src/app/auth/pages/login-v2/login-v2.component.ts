@@ -2,15 +2,15 @@ import { afterNextRender, afterRender, AfterViewInit, Component, ElementRef, Inj
 import { TermsandconditionsComponent } from '../termsandconditions/termsandconditions.component';
 import { RefundpolicyComponent } from '../refundpolicy/refundpolicy.component';
 import { PrivacypolicyComponent } from '../privacypolicy/privacypolicy.component';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from 'src/app/shared/auth/auth.service';
+import { AuthService } from '../../../shared/auth/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AboutMeComponent } from '../about-me/about-me.component';
 import { DOCUMENT, IMAGE_CONFIG, isPlatformBrowser, isPlatformServer, NgOptimizedImage, provideImgixLoader } from '@angular/common';
 import { OauthLoginComponent } from '../oauth-login/oauth-login.component';
 import { Meta, provideClientHydration, Title, withHttpTransferCacheOptions } from '@angular/platform-browser';
-import { authInterceptor } from 'src/app/shared/authserverinterceptor/authserverinterceptor';
+import { authInterceptor } from '../../../shared/authserverinterceptor/authserverinterceptor';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 declare var AOS: any;
 @Component({

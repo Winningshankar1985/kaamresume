@@ -4,9 +4,13 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "baseUrl": "src",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ]
+    },
     "types": [
-      "node",
-      "@angular/localize",
+      "node"
     ]
   },
   "files": [

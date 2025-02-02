@@ -3,8 +3,8 @@ import { Component, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
-import { AuthService } from 'src/app/shared/auth/auth.service';
-import { LocalstorageService } from 'src/app/shared/localStorage/localstorage.service';
+import { AuthService } from '../../../shared/auth/auth.service';
+import { LocalstorageService } from '../../../shared/localStorage/localstorage.service';
 import { TermsandconditionsComponent } from '../termsandconditions/termsandconditions.component';
 import { RefundpolicyComponent } from '../refundpolicy/refundpolicy.component';
 import { debounceTime } from 'rxjs';
