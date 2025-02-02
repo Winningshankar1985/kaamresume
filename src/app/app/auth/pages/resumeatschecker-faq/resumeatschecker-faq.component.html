@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="bg-dark1 w-100 p-4">
+   
+  <div class="container banner_section1">
+    <h1 class="s-65 wgt-900 text-white text-center mt-4 mb-3">KAAMRESUME FAQ:</h1>
+    <ng-container *ngFor="let item of FAQ; let i = index">
+<div ngbAccordion>
+    <div ngbAccordionItem>
+        <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>{{item?.question|titlecase}}</button>
+        </h2>
+        <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+                <ng-template>
+                    <div [innerHTML]="item?.answer"></div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+    </ng-container>
+</div>
+</div>
+<div class="mt-minus-70">
+    <!-- mt-minus-70 -->
+    <app-footer></app-footer>
+</div>

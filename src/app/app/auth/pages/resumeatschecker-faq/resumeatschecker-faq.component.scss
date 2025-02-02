@@ -1,0 +1,28 @@
+.banner_section1 {
+    // margin-top: 70px;
+    padding-top: 170px;
+    padding-bottom: 250px;
+    position: relative;
+    width: 100% !important;
+    min-width: 100vw !important;
+}
+* {
+    font-family: 'Raleway', sans-serif !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 1em;
+
+
+}
+.mt-minus-70{
+    margin-top: -70px !important;
+}
+.bg-dark1 {
+    background-color: rgb(64, 64, 64) !important;
+    border-color: rgb(64, 64, 64) !important;
+    height: auto !important;
+    width: 100% !important;
+    min-width: 100vw !important;
+}

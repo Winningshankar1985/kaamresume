@@ -1,0 +1,895 @@
+<div class="container h-100">
+
+    <mat-horizontal-stepper id="top" #stepper>
+        <mat-step label="Choose your Resume">
+            <div class=row>
+             
+
+</div>
+<div class=row>
+    <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+        <div class="m-3 border-1">
+            <h4>Engineer</h4>
+            <span class="p-2">
+                <img class="img-responsive img-fluid " src="../../../../assets/res-images/images/engineering.png" />
+            </span>
+            <div class="align-items-center p-4">
+                <button mat-raised-button color="success" (click)="chosenTheme('engineering')">I want Engineer's Theme</button>
+            <h4 class="text-center">(Ideal for freshers)</h4>
+            </div>
+        </div>
+    </div>
+<div class="col-12 col-lg-4 col-md-12 col-sm-12">
+<div class="m-3 border-1">
+<h4>Coders</h4>
+<span class="p-2">
+<img class="img-responsive img-fluid" src="../../../../assets/res-images/images/hackmyresume/resume-codecobra.png" />
+</span>
+<div class="align-items-center p-4">
+<button mat-raised-button color="success" (click)="chosenTheme('latte')">I want coders Theme</button>
+<h4 class="text-center">(Ideal for freshers)</h4>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4 col-md-12 col-sm-12">
+<div class="m-3 border-1">
+<h4>All Timers</h4>
+<span class="p-2">
+<img class="img-responsive img-fluid "   src="../../../../assets/res-images/images/direct.png" />
+</span>
+<div class="align-items-center p-4">
+<button mat-raised-button color="success" color="success" (click)="chosenTheme('direct')">I want All Timers Theme</button>
+</div>
+</div>
+</div>
+
+</div>
+<div class=row>
+    <!-- <div class="col-12 col-lg-4 col-md-12 col-sm-12">
+        <div class="m-3 border-1">
+            <h4>Moosy</h4>
+            <span class="p-2">
+                <img class="img-responsive img-fluid" src="../../../../assets/res-images/images/hackmyresume/resume-mooser.png" />
+            </span>
+            <div class="align-items-center p-4">
+                <button mat-raised-button color="success" (click)="chosenTheme('mooser')">I want Moosy Theme</button>
+            </div>
+        </div>
+    </div> -->
+<div class="col-12 col-lg-4 col-md-12 col-sm-12">
+<div class="m-3 border-1">
+<h4>Contempt</h4>
+<span class="p-2">
+<img class="img-responsive img-fluid" src="../../../../assets/res-images/images/contempo.png" />
+</span>
+<div class="align-items-center p-4">
+<button mat-raised-button color="success" (click)="chosenTheme('contempo')">I want Contempt Theme</button>
+</div>
+</div>
+</div>
+<div class="col-12 col-lg-4 col-md-12 col-sm-12">
+<div class="m-3 border-1">
+<h4>Roman Prime</h4>
+<span class="p-2">
+<img class="img-responsive img-fluid" src="../../../../assets/res-images/images/austinmcconnell.PNG" />
+</span>
+<div class="align-items-center p-4">
+<button mat-raised-button color="success" color="success" (click)="chosenTheme('austinmcconnell')">I want Roman Prime Theme </button>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="d-flex flex-row justify-content-end mb-2 mt-2">
+    <button mat-raised-button color="success" matStepperNext [disabled]="!theme" [matTooltipPosition]="'left'" [matTooltip]="!theme?'You have to select a Theme Above':''" color="primary">Continue to next
+        step...</button>
+</div>
+        </mat-step>
+        <mat-step label="Add Your Details">
+            <div class="row">
+                <div class="col-12">
+                    <ng-container [formGroup]="resumeBuilderForm">
+                        <div class="mt-4">
+                            <mat-card>
+                                <mat-card-header>
+                                    <mat-card-title>Tell us about Yourself</mat-card-title>
+
+                                </mat-card-header>
+                                <mat-card-content class="h-100">
+                                    <div class="mb-4 mt-3">
+                                        <!-- experienced: {{experienced|json}} | fresher: {{fresher|json}} -->
+                                        <!-- <div class="d-flex flex-row justify-content-center">
+                                            <mat-slide-toggle (change)="toggleexp()" [disabled]="fresher" formControlName="fresher">I'm a Fresher</mat-slide-toggle>
+                                            <mat-slide-toggle (change)="togglefresher()" [disabled]="experienced" formControlName="experienced">I'm
+                                                experienced</mat-slide-toggle>
+                                        </div> -->
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <mat-radio-button [checked]="fresher" (change)="togglefresher()">I'm a Fresher</mat-radio-button>
+                                            <mat-radio-button [checked]="experienced" (change)="toggleexp()">I'm experienced</mat-radio-button>
+                                        </div>
+                                    </div>
+                                    <ng-container *ngIf="fresher || experienced">
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your full name'"
+                                            formControlName="fullname"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['fullname']?.touched">{{(
+                                            resumeBuilderForm.controls['fullname'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                    <ng-container [formGroupName]="'location'">
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your Contact Address'"
+                                            formControlName="address"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['location.address']?.touched">{{(
+                                            resumeBuilderForm.controls['location.address'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your Postal Code'"
+                                            formControlName="postalCode"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['location.postalCode']?.touched">{{(
+                                            resumeBuilderForm.controls['location.postalCode'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'City'"
+                                            formControlName="city"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['location.city']?.touched">{{(
+                                            resumeBuilderForm.controls['location.city'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your Country Code'"
+                                            formControlName="countryCode"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['location.countryCode']?.touched">{{(
+                                            resumeBuilderForm.controls['location.countryCode'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your Region or State'"
+                                            formControlName="region"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['location.region']?.touched">{{(
+                                            resumeBuilderForm.controls['location.region'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                </ng-container>
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your Email'" formControlName="email"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['email']?.touched">{{(
+                                            resumeBuilderForm.controls['email'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    
+                                    </div>
+                                    <div class="mb-4 mt-4">
+                                        <app-input [required]="true" [label]="'Your Phone Number'" formControlName="phone"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['phone']?.touched">{{(
+                                            resumeBuilderForm.controls['phone'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    
+                                    </div>
+                                    <div class="mb-4 mt-4">
+                                        <div class="mt-2 mb-2"><strong>We don't recommend adding photos as HR's expect clean resumes and ATS scores dont consider Photo's</strong></div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                    - <span>
+                                    <label for="filePicker">Choose a image:</label><br>
+                                    <input type="file" id="filePicker" accept="image/*" (change)="handleFileSelect($event)">
+                                    </span> <br>  
+                                    <span *ngIf="imagePath" class="custom-img-dimension" >
+                                    
+                                        <img [src]="imagePath" style="height: 17.5rem; width: 15.5rem"/>
+                                    
+                                    </span>   
+                                    </div>
+                                      
+                                        
+                                    
+                                    </div>
+                                    <div class="mb-4">
+                                        <mat-form-field appearance="outline" [style.width.%]="100">
+                                            <input (change)="adddate($event,'dob')" matInput [matDatepicker]="dob"
+                                                formControlName="dob" placeholder="Your Date of Birth">
+                                            <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+                                            <mat-datepicker #dob></mat-datepicker>
+
+                                        </mat-form-field>
+
+                                        <mat-error *ngIf="resumeBuilderForm.controls['dob']?.touched">{{(
+                                            resumeBuilderForm.controls['dob'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+                                    <div class="mb-4">
+                                        <app-input [required]="true" [label]="'Your desired position'"
+                                            formControlName="mydesiredposition"></app-input>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['mydesiredposition']?.touched">{{(
+                                            resumeBuilderForm.controls['mydesiredposition'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+
+                                    </div>
+
+                                    <div class="mb-4 mt-3">
+                                        <h5>Your Skills</h5>
+                                        <app-text-editor formControlName="myskills"
+                                            [PlaceholderText]="'Type your skills here, be descriptive ....'">
+                                        </app-text-editor>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['myskills']?.touched">{{(
+                                            resumeBuilderForm.controls['myskills'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    </div>
+                                    <div class="mb-4 mt-3">
+                                        <h5>Your Strengths and weaknesses</h5>
+                                        <app-text-editor formControlName="strengthandweakness"
+                                            [PlaceholderText]="'Type your strengths and weaknesses here, be descriptive ....'">
+                                        </app-text-editor>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['strengthandweakness']?.touched">{{(
+                                            resumeBuilderForm.controls['strengthandweakness'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    </div>
+                                    <div class="mb-4 mt-3">
+                                        <h5>Your personal interests</h5>
+                                        <app-text-editor formControlName="personalinterest"
+                                            [PlaceholderText]="'Type your personal interests here, be descriptive ....'">
+                                        </app-text-editor>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['personalinterest']?.touched">{{(
+                                            resumeBuilderForm.controls['personalinterest'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    </div>
+                                    <div class="mb-4 mt-3">
+                                        <h5>Your Hobbies</h5>
+                                        <app-text-editor formControlName="hobbies"
+                                            [PlaceholderText]="'Type your hobbies here, be descriptive ....'">
+                                        </app-text-editor>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['hobbies']?.touched">{{(
+                                            resumeBuilderForm.controls['hobbies'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    </div>
+                                    <div class="mb-4 mt-3">
+                                        <h5>Your Extra curricular Activities</h5>
+                                        <app-text-editor formControlName="extracurricular_activity"
+                                            [PlaceholderText]="'Type your extracurricular activities here, be descriptive ....'">
+                                        </app-text-editor>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['extracurricular_activity']?.touched">{{(
+                                            resumeBuilderForm.controls['extracurricular_activity'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    </div>
+                                    <div class="mb-4 mt-3">
+                                        <h5>Awards and Honors</h5>
+                                        <app-text-editor formControlName="awardsandhonors"
+                                            [PlaceholderText]="'Type your awards and honors here, be descriptive ....'">
+                                        </app-text-editor>
+                                        <mat-error *ngIf="resumeBuilderForm.controls['awardsandhonors']?.touched">{{(
+                                            resumeBuilderForm.controls['awardsandhonors'].errors)?'You have to fill
+                                            this':''}}</mat-error>
+                                    </div>
+                                    <!--Angular form for language starexperiencets-->
+                                   <ng-container class="mb-4 mt-2" [formArrayName]="'languages'">
+                                    <h2 class="text-center">Language</h2>
+                                    <ng-container *ngFor="let lang of language().controls; let i = index" [formGroupName]="i">
+                                        <div class="mb-4 row">
+                                       <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <app-input [required]="true"
+                                        [label]="'Language'"
+                                        formControlName="lang"></app-input> 
+                                        <mat-error *ngIf="lang.get('lang')?.touched">{{(
+                                            lang.get('lang')?.errors)?'You have to
+                                            fill this':''}}</mat-error>
+                                       </div>
+                                       <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <app-input [required]="true"
+                                        [label]="'Fluency'"
+                                        formControlName="fluency"></app-input>
+                                        <mat-error *ngIf="lang.get('fluency')?.touched">{{(
+                                            lang.get('fluency')?.errors)?'You have to
+                                            fill this':''}}</mat-error>
+                                       </div>
+                                       <button mat-raised-button color="warn"
+                                       (click)="deleteLanguage(i)">Delete
+                                       this Entry</button>  
+                                        
+                                        </div>
+                                    </ng-container>
+                                    <div class="d-flex flex-row justify-content-center mb-4">
+                                        <button mat-raised-button class="mt-2 mb-2 " color="primary"
+                                            (click)="addLanguage()">Click to Add Language Skills</button>
+                                    </div>
+                                </ng-container>
+                                    <!--Angular form for language ends-->
+                                    <!--Angular form for profiles starts-->
+                                    <ng-container class="mb-4 mt-2" [formArrayName]="'profiles'">
+                                    <div class="text-center"> <h2 >Add Network Profiles</h2><small>[(eg) LinkedIn, GitHub e.tc]</small></div>
+                                     <ng-container *ngFor="let profile of profile().controls; let i = index" [formGroupName]="i">
+                                         <div class="mb-4 row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                         <app-input [required]="true"
+                                         [label]="'network [(eg) LinkedIn, GitHub e.tc]'"
+                                         formControlName="network"></app-input> 
+                                         <mat-error *ngIf="profile.get('network')?.touched">{{(
+                                             profile.get('network')?.errors)?'You have to
+                                             fill this':''}}</mat-error>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                         <app-input [required]="true"
+                                         [label]="'username'"
+                                         formControlName="username"></app-input>
+                                         <mat-error *ngIf="profile.get('username')?.touched">{{(
+                                             profile.get('username')?.errors)?'You have to
+                                             fill this':''}}</mat-error>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <app-input [required]="true"
+                                            [label]="'Profile Url'"
+                                            formControlName="url"></app-input>
+                                            <mat-error *ngIf="profile.get('url')?.touched">{{(
+                                                profile.get('url')?.errors)?'You have to
+                                                fill this':''}}</mat-error>
+                                           </div>
+                                        <button mat-raised-button color="warn"
+                                        (click)="deleteprofile(i)">Delete
+                                        this Entry</button>  
+                                         
+                                         </div>
+                                     </ng-container>
+                                     <div class="d-flex flex-row justify-content-center mb-4">
+                                         <button mat-raised-button class="mt-2 mb-2 " color="primary"
+                                             (click)="addprofile()">Click to Add Network Profiles</button>
+                                     </div>
+                                 </ng-container>
+                                     <!--Angular form for profiles ends-->
+                                    <!--Angular dynamic form for education starts--->
+                                    <ng-container class="mb-4 mt-2" [formArrayName]="'education'">
+
+                                        <h2 class="text-center mt-3">Education And Qualifications</h2>
+                                        <div *ngFor="let education of education().controls; let i = index"
+                                            [formGroupName]="i" class="row mt-2 jumbotron jumbotron-fluid">
+                                            <div class="mb-4">
+                                                <app-input [required]="true"
+                                                    [label]="'School or College Name'"
+                                                    formControlName="institutionname"></app-input>
+                                                <mat-error *ngIf="education.get('institutionname')?.touched">{{(
+                                                    education.get('institutionname')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+                                            </div>
+                                            <div class="mb-4">
+                                                <app-input [required]="true"
+                                                    [label]="'Course or Ceritification Name'"
+                                                    formControlName="certificationname"></app-input>
+                                                <mat-error *ngIf="education.get('certificationname')?.touched">{{(
+                                                    education.get('certificationname')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+                                            </div>
+                                            <div class="mb-4">
+                                                <app-input [required]="true"
+                                                    [label]="'In which place did you study eg) New Delhi'"
+                                                    formControlName="institutionplace"></app-input>
+                                                <mat-error *ngIf="education.get('institutionplace')?.touched">{{(
+                                                    education.get('institutionplace')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+                                            </div>
+                                            <div class="mb-4">
+                                                <app-input [required]="true"
+                                                    [label]="'What is your GPA or Percentage'"
+                                                    formControlName="gpa"></app-input>
+                                                <mat-error *ngIf="education.get('gpa')?.touched">{{(
+                                                    education.get('gpa')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mb-4">
+                                                    <mat-form-field appearance="outline" [style.width.%]="100">
+                                                        <input matInput [matDatepicker]="from"
+                                                            (dateChange)="changeDynamicDate($event,education,'educationstartDate')"
+                                                            formcontrolname="educationstartDate"
+                                                            placeholder="Start Date">
+                                                        <mat-datepicker-toggle matSuffix
+                                                            [for]="from"></mat-datepicker-toggle>
+                                                        <mat-datepicker #from></mat-datepicker>
+
+                                                    </mat-form-field>
+
+                                                    <mat-error *ngIf="education.get('educationstartDate')?.touched">{{(
+                                                        education.get('educationstartDate')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mb-4">
+                                                    <mat-form-field appearance="outline" [style.width.%]="100">
+                                                        <input matInput [matDatepicker]="to"
+                                                            formcontrolname="educationendDate" placeholder="End Date"
+                                                            (dateChange)="changeDynamicDate($event,education,'educationendDate')">
+                                                        <mat-datepicker-toggle matSuffix
+                                                            [for]="to"></mat-datepicker-toggle>
+                                                        <mat-datepicker #to></mat-datepicker>
+
+                                                    </mat-form-field>
+
+                                                    <mat-error *ngIf="education.get('educationendDate')?.touched">{{(
+                                                        education.get('educationendDate')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+
+                                                </div>
+                                            </div>
+                                            <div class="mb-4 mt-3">
+                                                <app-text-editor formControlName="studyType"
+                                                    [PlaceholderText]="'Type Your studyType'">
+                                                </app-text-editor>
+                                                <mat-error *ngIf="education.get('studyType')?.touched">{{(
+                                                    education.get('studyType')?.errors)?'You have to fill
+                                                    this':''}}</mat-error>
+                                            </div>
+                                            <div class="mb-4 mt-3">
+                                                <app-text-editor formControlName="courses"
+                                                    [PlaceholderText]="'Type Your Courses in bullet points'">
+                                                </app-text-editor>
+                                                <mat-error *ngIf="education.get('courses')?.touched">{{(
+                                                    education.get('courses')?.errors)?'You have to fill
+                                                    this':''}}</mat-error>
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-center">
+                                                <button mat-raised-button color="warn"
+                                                    (click)="deleteEducation(i)">Delete
+                                                    this Entry</button>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <button mat-raised-button class="mt-3 mb-4 " color="primary"
+                                                (click)="addEducation()">To Add Education Details Click
+                                                Here</button>
+                                        </div>
+
+                                    </ng-container>
+                                    <!--Angular dynamic form for education starts--->
+                                        <!--Angular dynamic form for project starts--->
+                                        <ng-container class="mb-4 mt-2" [formArrayName]="'projectwork'">
+                                        
+                                            <h2 class="text-center mt-3">Project Work</h2>
+                                            <div *ngFor="let project of project().controls; let i = index" [formGroupName]="i"
+                                                class="row mt-2 jumbotron jumbotron-fluid">
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Company Name'" formControlName="companyname"></app-input>
+                                                    <mat-error *ngIf="project.get('companyname')?.touched">{{(
+                                                        project.get('companyname')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Project Title Name'" formControlName="titlename"></app-input>
+                                                    <mat-error *ngIf="project.get('titlename')?.touched">{{(
+                                                        project.get('titlename')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Where was the company located ?'"
+                                                        formControlName="companyplace"></app-input>
+                                                    <mat-error *ngIf="project.get('companyplace')?.touched">{{(
+                                                        project.get('companyplace')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+                                                </div>
+                                                <!-- <div class="mb-4">
+                                                                                        <app-input [required]="true"
+                                                                                            [label]="'What is your GPA or Percentage'"
+                                                                                            formControlName="gpa"></app-input>
+                                                                                        <mat-error *ngIf="project.get('gpa')?.touched">{{(
+                                                                                            project.get('gpa')?.errors)?'You have to
+                                                                                            fill this':''}}</mat-error>
+                                                                                    </div>-->
+                                                <div class="col-6">
+                                                    <div class="mb-4">
+                                                        <mat-form-field appearance="outline" [style.width.%]="100">
+                                                            <input matInput [matDatepicker]="from"
+                                                                (dateChange)="changeDynamicDate($event,project,'projectstartDate')"
+                                                                formcontrolname="projectstartDate" placeholder="Start Date">
+                                                            <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+                                                            <mat-datepicker #from></mat-datepicker>
+                                        
+                                                        </mat-form-field>
+                                        
+                                                        <mat-error *ngIf="project.get('projectstartDate')?.touched">{{(
+                                                            project.get('projectstartDate')?.errors)?'You have to fill
+                                                            this':''}}</mat-error>
+                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-4">
+                                                        <mat-form-field appearance="outline" [style.width.%]="100">
+                                                            <input matInput [matDatepicker]="to" formcontrolname="projectendDate" placeholder="End Date"
+                                                                (dateChange)="changeDynamicDate($event,project,'projectendDate')">
+                                                            <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+                                                            <mat-datepicker #to></mat-datepicker>
+                                        
+                                                        </mat-form-field>
+                                        
+                                                        <mat-error *ngIf="project.get('projectendDate')?.touched">{{(
+                                                            project.get('projectendDate')?.errors)?'You have to fill
+                                                            this':''}}</mat-error>
+                                        
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="findings" [PlaceholderText]="'Type Your findings'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="project.get('findings')?.touched">{{(
+                                                        project.get('findings')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                                <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="suggestions" [PlaceholderText]="'Type Your suggestions in bullet points'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="project.get('suggestions')?.touched">{{(
+                                                        project.get('suggestions')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                                <div class="d-flex flex-row justify-content-center">
+                                                    <button mat-raised-button color="warn" (click)="deleteproject(i)">Delete
+                                                        this Entry</button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-center">
+                                                <button mat-raised-button class="mt-3 mb-4 " color="primary" (click)="addproject()">To Add project Details Click
+                                                    Here</button>
+                                            </div>
+                                        
+                                        </ng-container>
+                                        <!--Angular dynamic form for project starts--->
+                                    <div class="mt-3 mb-4">
+                                        <h2 class="text-center">Volunteer Details Here Please</h2>
+                                        <h6 class="text-center">For Fresher's add as many volunteer Information as possible.</h6>
+                                        <ng-container [formArrayName]="'volunteer'">
+                                            <div *ngFor="let volunteer of volunteer().controls; let i = index"
+                                                [formGroupName]="i" class="row mt-2 jumbotron jumbotron-fluid">
+
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'organization Name'"
+                                                        formControlName="organization"></app-input>
+                                                    <mat-error *ngIf="volunteer.get('organization')?.touched">{{(
+                                                        volunteer.get('organization')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Company Website URL'"
+                                                        formControlName="website"></app-input>
+                                                    <mat-error *ngIf="volunteer.get('website')?.touched">{{(
+                                                        volunteer.get('website')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Position Name'"
+                                                        formControlName="position"></app-input>
+                                                    <mat-error *ngIf="volunteer.get('position')?.touched">{{(
+                                                        volunteer.get('position')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-4">
+                                                        <mat-form-field appearance="outline" [style.width.%]="100">
+                                                            <input matInput [matDatepicker]="from"
+                                                                (dateChange)="changeDynamicDate($event,volunteer,'startDate')"
+                                                                formcontrolname="startDate" placeholder="Start Date">
+                                                            <mat-datepicker-toggle matSuffix
+                                                                [for]="from"></mat-datepicker-toggle>
+                                                            <mat-datepicker #from></mat-datepicker>
+
+                                                        </mat-form-field>
+
+                                                        <mat-error *ngIf="volunteer.get('startDate')?.touched">{{(
+                                                            volunteer.get('startDate')?.errors)?'You have to fill
+                                                            this':''}}</mat-error>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-4">
+                                                        <mat-form-field appearance="outline" [style.width.%]="100">
+                                                            <input matInput [matDatepicker]="to"
+                                                                formcontrolname="endDate" placeholder="End Date"
+                                                                (dateChange)="changeDynamicDate($event,volunteer,'endDate')">
+                                                            <mat-datepicker-toggle matSuffix
+                                                                [for]="to"></mat-datepicker-toggle>
+                                                            <mat-datepicker #to></mat-datepicker>
+
+                                                        </mat-form-field>
+
+                                                        <mat-error *ngIf="volunteer.get('endDate')?.touched">{{(
+                                                            volunteer.get('endDate')?.errors)?'You have to fill
+                                                            this':''}}</mat-error>
+
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="summary"
+                                                        [PlaceholderText]="'Summarize Your role, Responsibilities or Job Description with Achievements and challenges'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="volunteer.get('summary')?.touched">{{(
+                                                        volunteer.get('summary')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                                <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="highlights"
+                                                        [PlaceholderText]="'Type Your Job Highlights in bullet points not in summary'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="volunteer.get('highlights')?.touched">{{(
+                                                        volunteer.get('highlights')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                                <button mat-raised-button color="warn"
+                                                    (click)="deletevolunteer(i)">Delete
+                                                    this Entry</button>
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-center">
+                                                <button mat-raised-button class="mt-2 mb-2" color="primary"
+                                                    (click)="addvolunteer()">To Add volunteer Details Click
+                                                    Here</button>
+                                            </div>
+                                        </ng-container>
+                                    </div>
+                                    <hr>
+                                    <!--Angular dynamic form starts-->
+                                    <ng-container *ngIf="experienced">
+                                        <h2 class="text-center">My Experience</h2>
+                                        <div class="mb-4">
+                                            <app-input [required]="true" [label]="'Your experience in years'"
+                                                formControlName="totalExperience"></app-input>
+                                            <mat-error *ngIf="resumeBuilderForm.controls['totalExperience']?.touched">{{(
+                                                resumeBuilderForm.controls['totalExperience'].errors)?'You have to fill
+                                                this':''}}</mat-error>
+
+                                        </div>
+                                        <div class="mb-4">
+                                            <app-input [required]="true" [label]="'Your current industry'"
+                                                formControlName="currentindustry"></app-input>
+                                            <mat-error *ngIf="resumeBuilderForm.controls['currentindustry']?.touched">{{(
+                                                resumeBuilderForm.controls['currentindustry'].errors)?'You have to fill
+                                                this':''}}</mat-error>
+
+                                        </div>
+                                        <div class="mb-4">
+                                            <app-input [required]="true"
+                                                [label]="'In which industry are you looking for a job'"
+                                                formControlName="desiredindustry"></app-input>
+                                            <mat-error *ngIf="resumeBuilderForm.controls['desiredindustry']?.touched">{{(
+                                                resumeBuilderForm.controls['desiredindustry'].errors)?'You have to fill
+                                                this':''}}</mat-error>
+
+                                        </div>
+                                        <ng-container [formArrayName]="'work'">
+                                            <div *ngFor="let experiences of experience().controls; let i = index"
+                                                [formGroupName]="i" class="row mt-2 jumbotron jumbotron-fluid">
+
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Company Name'"
+                                                        formControlName="companyname"></app-input>
+                                                    <mat-error *ngIf="experiences.get('companyname')?.touched">{{(
+                                                        experiences.get('companyname')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Company Website URL'"
+                                                        formControlName="website"></app-input>
+                                                    <mat-error *ngIf="experiences.get('website')?.touched">{{(
+                                                        experiences.get('website')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Position Name'"
+                                                        formControlName="positionname"></app-input>
+                                                    <mat-error *ngIf="experiences.get('positionname')?.touched">{{(
+                                                        experiences.get('positionname')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-4">
+                                                        <mat-form-field appearance="outline" [style.width.%]="100">
+                                                            <input matInput [matDatepicker]="from"
+                                                                (dateChange)="changeDynamicDate($event,experiences,'fromDate')"
+                                                                formcontrolname="fromDate" placeholder="Start Date">
+                                                            <mat-datepicker-toggle matSuffix
+                                                                [for]="from"></mat-datepicker-toggle>
+                                                            <mat-datepicker #from></mat-datepicker>
+
+                                                        </mat-form-field>
+
+                                                        <mat-error *ngIf="experiences.get('fromDate')?.touched">{{(
+                                                            experiences.get('fromDate')?.errors)?'You have to fill
+                                                            this':''}}</mat-error>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="mb-4" *ngIf="!experiences.get('isCurrent')?.value">
+                                                        <mat-form-field appearance="outline" [style.width.%]="100" >
+                                                            <input matInput [matDatepicker]="to" 
+                                                                formcontrolname="toDate" placeholder="End Date"
+                                                                (dateChange)="changeDynamicDate($event,experiences,'toDate')">
+                                                            <mat-datepicker-toggle matSuffix
+                                                                [for]="to"></mat-datepicker-toggle>
+                                                            <mat-datepicker #to></mat-datepicker>
+
+                                                        </mat-form-field>
+
+                                                        <mat-error *ngIf="experiences.get('toDate')?.touched">{{(
+                                                            experiences.get('toDate')?.errors)?'You have to fill
+                                                            this':''}}</mat-error>
+
+                                                    </div>
+                                                    <div class="m-1" >
+                                                   <mat-checkbox formControlName="isCurrent" (change)="presentCompanyInExperience(i,$event)" >I work in this company currently</mat-checkbox>     
+                                                    </div>
+                                                   
+                                                    </div>
+                                              
+                                                <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="summary"
+                                                        [PlaceholderText]="'Summarize Your role, Responsibilities or Job Description with Achievements and challenges'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="experiences.get('summary')?.touched">{{(
+                                                        experiences.get('summary')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                                <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="highlights"
+                                                        [PlaceholderText]="'Type Your Job Highlights in bullet points not in summary'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="experiences.get('highlights')?.touched">{{(
+                                                        experiences.get('highlights')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                                <button mat-raised-button color="warn"
+                                                    (click)="deleteExperience(i)">Delete
+                                                    this Entry</button>
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-center">
+                                                <button mat-raised-button class="mt-2 mb-2" color="primary"
+                                                    (click)="addExperience()">To Add Experience Details Click
+                                                    Here</button>
+                                            </div>
+                                        </ng-container>
+                                        <!---References-->
+                                        <ng-container [formArrayName]="'references'">
+                                            <h2 class="text-center mt-3 mb-2">My Reference</h2>
+                                            <h6 class="text-center">(Fresher's Should gather as much references and add here.) </h6>
+                                            <div *ngFor="let references of references().controls; let i = index" [formGroupName]="i"
+                                                class="row mt-2 jumbotron jumbotron-fluid">
+                                        
+                                                <div class="mb-4">
+                                                    <app-input [required]="true" [label]="'Referer Name'" formControlName="name"></app-input>
+                                                    <mat-error *ngIf="references.get('name')?.touched">{{(
+                                                        references.get('name')?.errors)?'You have to
+                                                        fill this':''}}</mat-error>
+                                        
+                                                </div>
+                                            <div class="mb-4 mt-3">
+                                                    <app-text-editor formControlName="reference"
+                                                        [PlaceholderText]="'Your Reference as it is'">
+                                                    </app-text-editor>
+                                                    <mat-error *ngIf="references.get('reference')?.touched">{{(
+                                                        references.get('reference')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+                                                </div>
+                                             
+                                                <button mat-raised-button color="warn" (click)="deleteReference(i)">Delete
+                                                    this Entry</button>
+                                                    <!--{{references?.value|json}}-->
+                                            </div>
+                                            <div class="d-flex flex-row justify-content-center">
+                                                <button mat-raised-button class="mt-2 mb-2" color="primary" (click)="addReference()">To Add Reference Details
+                                                    Click
+                                                    Here</button>
+                                            </div>
+                                           
+                                        </ng-container>
+                                        <!--References-->
+
+                                    </ng-container>
+                                    <!--Angular dynamic form ends-->
+                                    <!--Angular form for publication starts-->
+                                    <h2 class="text-center">Publications</h2>
+                                    <h6 class="text-center">Freshers with Pubication Records get a lot of attention.</h6>
+                                    <ng-container [formArrayName]="'publications'">
+                                        
+                                        <div *ngFor="let publicationss of publications().controls; let i = index"
+                                            [formGroupName]="i" class="row mt-2 jumbotron jumbotron-fluid">
+
+                                            <div class="mb-4">
+                                                <app-input [required]="true" [label]="'Name'"
+                                                    formControlName="name"></app-input>
+                                                <mat-error *ngIf="publicationss.get('name')?.touched">{{(
+                                                    publicationss.get('name')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+
+                                            </div>
+                                            <div class="mb-4">
+                                                <app-input [required]="true" [label]="'Website URL'"
+                                                    formControlName="website"></app-input>
+                                                <mat-error *ngIf="publicationss.get('website')?.touched">{{(
+                                                    publicationss.get('website')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+
+                                            </div>
+                                            <div class="mb-4">
+                                                <app-input [required]="true" [label]="'Publisher Name'"
+                                                    formControlName="publisher"></app-input>
+                                                <mat-error *ngIf="publicationss.get('publisher')?.touched">{{(
+                                                    publicationss.get('publisher')?.errors)?'You have to
+                                                    fill this':''}}</mat-error>
+
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-4">
+                                                    <mat-form-field appearance="outline" [style.width.%]="100">
+                                                        <input matInput [matDatepicker]="from"
+                                                            (dateChange)="changeDynamicDate($event,publicationss,'releaseDate')"
+                                                            formcontrolname="releaseDate" placeholder="Release Date">
+                                                        <mat-datepicker-toggle matSuffix
+                                                            [for]="from"></mat-datepicker-toggle>
+                                                        <mat-datepicker #from></mat-datepicker>
+
+                                                    </mat-form-field>
+
+                                                    <mat-error *ngIf="publicationss.get('releaseDate')?.touched">{{(
+                                                        publicationss.get('releaseDate')?.errors)?'You have to fill
+                                                        this':''}}</mat-error>
+
+                                                </div>
+                                            </div>
+                                          
+                                            <div class="mb-4 mt-3">
+                                                <app-text-editor formControlName="summary"
+                                                    [PlaceholderText]="'Summarize Your Publication'">
+                                                </app-text-editor>
+                                                <mat-error *ngIf="publicationss.get('summary')?.touched">{{(
+                                                    publicationss.get('summary')?.errors)?'You have to fill
+                                                    this':''}}</mat-error>
+                                            </div>
+                                          
+                                            <button mat-raised-button color="warn"
+                                                (click)="deletepublications(i)">Delete
+                                                this Entry</button>
+                                        </div>
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <button mat-raised-button class="mt-2 mb-2" color="primary"
+                                                (click)="addpublications()">To Add publications Details Click
+                                                Here</button>
+                                        </div>
+                                    </ng-container>
+                                    <!--Angular form for publications end-->
+
+
+                                    <!-- <div class="mb-4 mt-3">
+                                        <app-text-editor [PlaceholderText]="'Paste Your Resume Contents Here ....'">
+                                        </app-text-editor>
+                                    </div> -->
+                            </ng-container>
+                                </mat-card-content>
+                                <!-- <mat-card-actions class="d-flex flex-row justify-content-center">
+                                    <button mat-raised-button color="primary">Download</button>
+                                </mat-card-actions> -->
+                            </mat-card>
+                        </div>
+                    </ng-container>
+                    <!--{{resumeBuilderForm.value|json}}  ||| {{resumeBuilderForm.invalid | json}}-->
+                    <div class="d-flex flex-row justify-content-end mb-2 mt-2">
+                        <button mat-raised-button [disabled]="resumeBuilderForm.invalid" (click)="nextStepper(stepper)" color="primary">Continue to next
+                            step...</button>
+                    </div>
+                </div>
+
+            </div>
+        </mat-step>
+       
+    </mat-horizontal-stepper>
+   
+</div>

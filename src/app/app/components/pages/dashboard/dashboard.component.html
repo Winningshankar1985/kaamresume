@@ -1,0 +1,90 @@
+<div class="row ">
+
+    <div class="col-12 col-md-12 col-lg-8">
+        <div class="container mt-3">
+       <mat-card>
+    <mat-card-header>
+        <mat-card-title>Plan Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="scrollable-h-30">
+    <div class="d-flex justify-content-center align-items-center">    
+    <b class="flex-wrap">Your Plan is :</b> <br>
+    <span [title]="paymentdetails?.plan_name">
+    <img class="img-thumbnail" height="70" width="70" *ngIf="!usable " [title]="paymentdetails?.plan_name"
+        src="../../../../assets/img/free-svgrepo-com.svg">
+    <img class="img-thumbnail" height="70" width="70" *ngIf="usable && paymentdetails?.plan_name=='bronze'"
+        [title]="paymentdetails?.plan_name" src="../../../../assets/img/coin.png">
+    <img class="img-thumbnail" height="70" width="70" *ngIf="usable && paymentdetails?.plan_name=='gold'"
+        [title]="paymentdetails?.plan_name" src="../../../../assets/img/gold.webp">
+    <img class="img-thumbnail" height="70" width="70" *ngIf="usable && paymentdetails?.plan_name=='silver'"
+        [title]="paymentdetails?.plan_name" src="../../../../assets/img/jpg.webp">
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <h4><b class="flex-wrap">Credits used :</b> {{paymentdetails?.plan_name=='bronze'? paymentdetails?.used +' / 5':paymentdetails?.plan_name=='silver'?paymentdetails?.used +' / 10':paymentdetails?.plan_name=='gold'?paymentdetails?.used +' / 15':'0 Due to no payments'}}, </h4><br>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <h3><b>Cost:</b></h3> <h4><b>{{paymentdetails?.plan_name=='bronze'?'₹ 850':paymentdetails?.plan_name=='silver'?'₹ 1600':paymentdetails?.plan_name=='gold'?'₹ 3000':'₹ 0'}}</b></h4>
+    
+    </div><br />
+    <div *ngIf="!usable " class="d-flex justify-content-center mt-3 mb-2">
+        <button class="theme-colors w-50 btn" (click)="buyCredits()">Buy Credits</button>
+    </div>    
+    <!-- <b>Expiry Date :</b> {{paymentdetails.expiryDate}} -->
+    </mat-card-content>
+
+  </mat-card> 
+    </div>
+
+     <div class="container mt-2">
+       <mat-card>
+    <mat-card-header>
+        <mat-card-title class="text-center">Create a Resume</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="scrollable-h-25">
+    <h3 style="text-align:center; font-weight:bolder; font-size:larger">Generate a Resume</h3>
+    <span  class="d-flex justify-content-center"><button [disabled]="!usable" width="100% !important" mat-flat-button color="accent" (click)="generateResume()">Click Here To Generate Resume</button></span>
+    </mat-card-content>
+ 
+  </mat-card> 
+    </div>
+    </div>
+<div class="col-12 col-md-12 col-lg-4 mt-3">
+ <div class="container">
+       <mat-card >
+    <mat-card-header>
+        <mat-card-title>News</mat-card-title>
+       
+    </mat-card-header>
+    <mat-card-content class="scrollable-h-50">
+        <iframe width="320" height="auto" src="https://rss.app/embed/v1/list/MwJCq6asyoUOG6yv" frameborder="0"></iframe>
+   </mat-card-content>
+  
+  </mat-card> 
+</div>
+</div>
+</div>
+<div class="row mt-3 ">
+<div class="col-12 col-md-12 col-lg-12">
+<div class="container-fluid">
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>Recent Generations</mat-card-title>
+      
+    </mat-card-header>
+    <mat-card-content class="scrollable-h-50">
+        <div *ngIf="historydata?.length==0" class="d-flex justify-content-center align-items-center">    
+    <img src="../../../../assets/img/sorry_smiley.jpeg" height="100" width="100">
+    <b><h3>No Recent Generations Found</h3></b>
+        </div>
+    <ng-container *ngIf="historydata?.length>0">
+    <div *ngFor="let data of historydata;" style="border: 2px blue dashed; padding: 2px;">
+        <span  class="bg-success text-white">Theme:</span>{{data.json_resume_theme}} | <span class="bg-success text-white">Date Generated:</span>{{data.created_at| date:'dd-MM-yyyy'}}<br>
+    </div>    
+
+    </ng-container>
+    </mat-card-content>
+
+</mat-card>  
+</div>
+</div>    
+</div>

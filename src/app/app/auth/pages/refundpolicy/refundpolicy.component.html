@@ -1,0 +1,32 @@
+<mat-card class="h-100">
+    <mat-card-title-group class="theme-colors">
+        <mat-card-title class="custom-subheading-L text-center">Cancellation & Refund Policy</mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content class="scrollable-h-75">
+
+        
+
+        <div class="container">
+            <div class="">
+                <div class="custom-subheading-L">
+                    <p>Last updated on 31-05-2024 21:18:31</p>
+                </div>
+                <div class="custom-content-xs-heavy">
+                    <div class="mt-3" [innerHTML]="refundPolicyContent">
+                   
+  
+                    </div>
+  
+  
+                </div>
+            </div>
+            </div>
+        
+    </mat-card-content>
+    <mat-card-footer>
+         <div class="d-flex justify-content-center align-items-center bg-light m-3">
+        <button class="theme-colors btn w-100" routerLink="/">Home</button>
+        <!-- (click)="dialogRef.close()" -->
+     </div>
+    </mat-card-footer>
+</mat-card>

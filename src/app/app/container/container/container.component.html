@@ -1,0 +1,128 @@
+
+<div [class.background]="isLoading$|async" >
+   
+            <div *ngIf="isLoading$|async" class="center-overlay"> <mat-spinner></mat-spinner></div>
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav  mode="side" [class.is-show]="isLtDesktop>992"
+        [class.is-hidden]="isLtDesktop>0 && isLtDesktop<996" [(opened)]="isDesktop" class="mat-elevation-z8 col-1 theme-colors">
+        <span style="margin-bottom: 2rem"> <img  class="LOGO"
+                src="../../../assets/logo/kaamresume_mobile_logo.png" /> </span>
+        <img style="height: 3rem !important; width: auto !important" class="avatar mt-4" [src]="userdetails?.photourl" />
+
+
+        <a class="spaces" mat-menu-item [routerLink]="'/pro_area/dashboard'">
+            <mat-icon>home</mat-icon><br>
+            <span class="sidenav-font" *ngIf="isLtDesktop>996" mat-button>Home</span>
+        </a>
+        <a class="spaces" mat-menu-item [routerLink]="'/pro_area/myqueries'">
+            <mat-icon>history_edu</mat-icon>
+            <span class="sidenav-font" *ngIf="isLtDesktop>996" mat-button>History</span>
+        </a>
+        <a *ngIf="usable" class="spaces" mat-menu-item [routerLink]="'/pro_area/buildresume'">
+            <mat-icon>terminal</mat-icon>
+            <span class="sidenav-font" *ngIf="isLtDesktop>996" mat-button>Generate</span>
+        </a>
+        <a class="spaces" mat-menu-item [routerLink]="'/pro_area/settings/subscriptions'">
+            <mat-icon>settings_input_component</mat-icon>
+            <span class="sidenav-font" *ngIf="isLtDesktop>996" mat-button>Settings</span>
+        </a>
+
+    </mat-sidenav>
+    <mat-sidenav mode="over" #sidenav  [class.is-show]="isLtDesktop<992" [class.is-hidden]="isLtDesktop>992" [class.is-shown]="isLtDesktop<992"
+         class="mat-elevation-z8 col-1 theme-colors is-shown" [(opened)]="isMenuOpen"  class="sidenav full-width theme-colors"
+  (click)="onSidenavClick()" >
+   <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 text-left ">
+        <span class="d-flex justify-content-start" style="margin-bottom: 2rem"> <img class="LOGO" src="../../../assets/logo/kaamresume_logo_800.png" /> </span>
+       <span class="text-center d-flex justify-content-start"> <img style="height: 3rem !important; width: auto !important" class="avatar justify-content-center" [src]="userdetails?.photourl" /><span class="justify-content-center" style="    margin-top: 15px;"> {{userdetails?.fname+' '+userdetails?.lname}} </span></span>
+    
+        <span class="text-left">   
+        <a class="spaces m-4" mat-menu-item [routerLink]="'/pro_area/dashboard'">
+            <mat-icon>home</mat-icon>
+            <span class="sidenav-font" mat-button>Home</span>
+        </a>
+        <a class="spaces m-4" mat-menu-item [routerLink]="'/pro_area/myqueries'">
+            <mat-icon>history_edu</mat-icon>
+            <span class="sidenav-font"  mat-button>History</span>
+        </a>
+        <a *ngIf="usable" class="spaces m-4" mat-menu-item [routerLink]="'/pro_area/buildresume'">
+            <mat-icon>terminal</mat-icon>
+            <span class="sidenav-font"  mat-button>Generate</span>
+        </a>
+        <a class="spaces m-4" mat-menu-item [routerLink]="'/pro_area/settings/subscriptions'">
+            <mat-icon>settings_input_component</mat-icon>
+            <span class="sidenav-font"  mat-button>Settings</span>
+        </a>
+        <a *ngIf="!usable" mat-menu-item class="spaces m-4" 
+            [routerLink]="'/pro_area/settings/subscriptions'"><span class="sidenav-font"  mat-button>Upgrade Now</span><mat-icon>shopping_bag</mat-icon></a>
+    </span>
+    </div>
+    <div class="col-4"></div>
+</div>
+    
+</mat-sidenav>
+    <mat-sidenav-content [class.is-lt-Desktop]="isLtDesktop>1200" [class.is-md-Desktop]="isLtDesktop>996 && isLtDesktop<1200" [class.is-mobile]="isLtDesktop>274 && isLtDesktop<768" [class.is-tablet]="isLtDesktop>768 && isLtDesktop<996" >
+        <mat-toolbar class="theme-colors p-2 " >
+            <mat-toolbar-row>
+            <span [class.is-hidden]="isLtDesktop>996"  (click)="sidenav.toggle()"style=""class="d-flex justify-content-start"> <mat-icon class="mt-2 mr-auto">{{ isMenuOpen ? 'menu_open' : 'menu'
+                    }}</mat-icon></span>
+<div class="d-flex justify-content-end">
+    <span class="ml-auto">
+        <a *ngIf="!usable" class="btn" style="color: white;" [routerLink]="'/pro_area/settings/subscriptions'"><span>Upgrade
+                Now</span><mat-icon *ngIf="isLtDesktop>996">shopping_bag</mat-icon></a>
+        <a *ngIf="!usable && isLtDesktop>996" class="btn ml-rem" style="color: white; margin-top: 0.5rem;" [routerLink]="'/pro_area/samples'"><span>Samples</span></a>
+    <!--  -->
+        <a class="btn ml-rem" style="color: white;" [routerLink]="'/pro_area/profile'">
+            <mat-icon *ngIf="isLtDesktop>996">account_circle</mat-icon>
+            <span>Profile</span>
+        </a>
+        <a class="btn ml-rem" style="color: white;" (click)="signout()"> <mat-icon
+                *ngIf="isLtDesktop>996">logout</mat-icon><span>Signout</span></a>
+    </span>
+           </div>
+
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="container mat-elevation-z10 container-body">
+            <router-outlet></router-outlet>
+
+        </div>
+        <div class="container-fluid mat-elevation-z10 theme-colors p-5 container-footer">
+            <!-- <span style="text-align: center; margin-bottom: 2rem !important;"> All CopyRights Reserved &copy;</span> -->
+            <div class="text-center text-white ">
+            
+                <div class="copy_text">
+                    <p class="text-white text-center">© Copyrights 2024. All rights reserved.</p>
+                </div>
+                <ul class="text-white d-flex justify-content-between mt-5">
+                    <!-- <li><a class="d-inline-block text-center ml-2 cursor text-white" (click)="openpopup('privacy')">Privacy
+                            Policy</a></li> |
+                    <li><a href="https://www.linkedin.com/in/gsshanker3" target="_top"
+                            class="d-inline-block text-center ml-2 cursor text-white">About
+                            Me</a></li> |
+                    <li><a class="text-white" href="https://www.iubenda.com/privacy-policy/87636734/cookie-policy" target="_blank">
+                            Cookie Policy</a>
+                    </li> |
+                    <li><a (click)="openpopup('terms')" class="d-inline-block text-center ml-2 cursor text-white">Terms And
+                            conditions</a></li> | -->
+                    <!-- <li><a (click)="openpopup('refunds')" class="d-inline-block text-center ml-2 cursor text-white">Cancellation
+                            Policy</a>
+                    </li>  | -->
+                    <li><a (click)="openpopup('resumeatschecker')" class="d-inline-block text-center ml-2 cursor text-white">Resume
+                            ATS scanner</a>
+                    </li>  |
+                    <li><a (click)="openpopup('tools-resumeatschecker')"
+                            class="d-inline-block text-center ml-2 cursor text-white">Freemium tools</a>
+                    </li>  |
+                    <li><a (click)="openpopup('faq')" class="d-inline-block text-center ml-2 cursor text-white">FAQ</a>
+                    </li>
+                </ul>
+            
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+

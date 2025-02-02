@@ -1,0 +1,109 @@
+<div class="container mt-2">
+<div class="row">
+<ng-container class="d-flex flex-row justify-content-evenly  m-2">
+    <mat-card class="tabs">
+        <mat-card-header >
+            <mat-card-title>Account Overview</mat-card-title>
+            
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+        <div class="col-4 col-lg-4 col-md-4 col-sm-12 mt-4">
+           
+        <!-- <img class="img-thumbnail" height="70" width="70" src="../../../../assets/img/coin.png">    
+        <img class="img-thumbnail" height="70" width="70" src="../../../../assets/img/gold.webp">
+        <img class="img-thumbnail" height="70" width="70" src="../../../../assets/img/jpg.webp"> -->
+            <span  [title]="paymentdetails?.plan_name">
+                <img class="img-thumbnail" height="70" width="70" *ngIf="!usable" [title]="paymentdetails?.plan_name" src="../../../../assets/img/free-svgrepo-com.svg">
+                <img class="img-thumbnail" height="70" width="70" *ngIf="usable && paymentdetails?.plan_name=='bronze'"
+                    [title]="paymentdetails?.plan_name" src="../../../../assets/img/coin.png">
+                <img class="img-thumbnail" height="70" width="70" *ngIf="usable && paymentdetails?.plan_name=='gold'"
+                    [title]="paymentdetails?.plan_name" src="../../../../assets/img/gold.webp">
+                <img class="img-thumbnail" height="70" width="70" *ngIf="usable && paymentdetails?.plan_name=='silver'"
+                    [title]="paymentdetails?.plan_name" src="../../../../assets/img/jpg.webp">
+                    <h4 class="mt-2"><b class="flex-wrap">Credits used :</b> {{paymentdetails?.plan_name=='bronze'? paymentdetails?.used +' / 5':paymentdetails?.plan_name=='silver'?paymentdetails?.used +' / 10':paymentdetails?.plan_name=='gold'?paymentdetails?.used +' / 15':'0 Due to no payments'}}, </h4><br>
+            </span>
+        </div>
+        <div class="col-4 col-lg-4 col-md-4 col-sm-12 text-center mt-4">
+        <h3 style="font-size: x-large;">Account Plan</h3>
+        <b style="font-size: x-large;">{{paymentdetails?.plan_name?(paymentdetails?.plan_name | uppercase ):'Free'| uppercase}}</b>    
+        </div>
+        <div class="col-4 col-lg-4 col-md-4 col-sm-12 text-center mt-4">
+        <h3 style="font-size: x-large;">Cost</h3>
+        <b style="font-size: x-large;">{{paymentdetails?.plan_name=='bronze'?'₹ 850':paymentdetails?.plan_name=='silver'?'₹1600':paymentdetails?.plan_name=='gold'?'₹ 3000':'₹ 0'}}</b>
+        </div>
+        </div>
+        </mat-card-content>
+        
+    </mat-card>
+</ng-container>
+
+<div class="container my-5 py-2" id="price-table">
+    <h2 class="text-center font-weight-bold d-block mb-3">Check our pricing</h2>
+    <div *ngIf="!paymentStatus_fail && !paymentStatus" class="alert alert-danger" role="alert">
+        <h3 class="text-danger text-center">Sorry, the payment<strong> Failed!</strong></h3>
+    </div>
+    <div *ngIf="paymentStatus && paymentStatus_fail" class="alert alert-success" role="alert">
+       <h3 class="text-success text-center">Hurray! your payment was<strong> Successful, Page will Refresh. </strong></h3>
+    </div>
+    <div *ngIf="!paymentStatus_pending" class="alert alert-warning" role="alert">
+        <h3 class="text-warning text-center">Payment is<strong> Pending </strong>on your End.</h3>
+    </div>
+    <div class="row">
+        <div 
+            class="col-md-4 text-center py-4 mt-5 ">
+            <h4 class="my-4">BRONZE</h4>
+            <p class="font-weight-bold" > <span class="display-6 font-weight-bold">{{850| currency:'INR'}}</span> </p>
+            <ul class="list-unstyled">
+                <li>Up to 5 Documents</li>
+                <li>Limited Support</li>
+            </ul>
+            <span class="m-2">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Phone associated with payments </mat-label>
+                <input matInput #phone type="tel" required min="10" max="15"
+                    placeholder="Phone associated with payments ">
+                </mat-form-field>
+                </span>
+            <button [matTooltip]="!phone?.value?'Enter Phone number to enable payments':''"  class="cursor btn my-4 font-weight-bold puprple_btn ml-0 text-black" (click)="!phone?.value?toast():paymentscashfree(8,'BRONZE',phone?.value)">Get For ₹850 per month</button>
+        </div>
+        <div class="col-md-4 text-center py-4 mt-5 theme-colors">
+            <h4 class="my-4">GOLD</h4>
+            <p class="font-weight-bold"><span class="display-6 font-weight-bold">{{3000| currency:'INR'}}</span> </p>
+            <ul class="list-unstyled">
+                <li>Up to 15 Documents</li>
+                <li>Unlimited Support</li>
+            </ul>
+        
+            <span class="m-2">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Phone associated with payments </mat-label>
+                    <input matInput #phone2 type="tel" required min="10" max="15"
+                        placeholder="Phone associated with payments ">
+                </mat-form-field>
+            </span>
+            <button  [matTooltip]="!phone2?.value?'Enter Phone number to enable payments':''"  (click)="!phone2?.value?toast():paymentscashfree(3,'GOLD',phone2?.value)" class="btn my-4 font-weight-bold puprple_btn ml-0 bg-white text-primary cursor">Get For ₹3000 per month</button>
+        
+        </div>
+        <div 
+            class="col-md-4 text-center py-4 mt-5 rounded" >
+            <h4 class="my-4 ">SILVER</h4>
+            <p class="font-weight-bold"> <span class="display-6 font-weight-bold ">{{1600| currency:'INR'}}</span> </p>
+            <ul class="list-unstyled">
+                <li>Up to 10 Documents</li>
+                <li>Limited Support</li>
+            </ul>
+            <span class="m-2">
+                <mat-form-field appearance="outline" class="w-100 c-background">
+                    <mat-label>Phone associated with payments </mat-label>
+                <input matInput #phone1 type="tel" min="10" max="15" required placeholder="Phone associated with payments ">
+                </mat-form-field>
+            </span>
+           <button [matTooltip]="!phone1?.value?'Enter Phone number to enable payments':''"  class="cursor btn my-4 font-weight-bold puprple_btn ml-0 text-black"  (click)="!phone1?.value?toast():paymentscashfree(1,'SILVER',phone1?.value)">Get For ₹1600 per month</button>
+        </div>
+        
+    </div>
+</div>
+
+</div>
+</div>

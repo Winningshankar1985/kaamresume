@@ -1,0 +1,47 @@
+@media (min-width: 768px) {
+    ::ng-deep body {
+        position: absolute !important;
+        width: auto !important;
+        max-width: 115vw !important;
+        min-width: 105vw;
+    }
+
+    .bg-dark1 {
+        margin-top: -135px !important;
+    }
+
+    .mt-85 {
+        margin-top: 30rem !important;
+    }
+}
+
+@media (min-width: 3500px) {
+    ::ng-deep body {
+        width: auto !important;
+        max-width: 115vw !important;
+        min-width: 105vw;
+        position: relative !important;
+    }
+
+    .bg-dark1 {
+        margin-top: -135px !important;
+    }
+
+    .mt-85 {
+        margin-top: 30rem !important;
+    }
+}
+
+@media (max-width: 548px) {
+    ::ng-deep body {
+        width: auto !important;
+        max-width: 140vw !important;
+        min-width: 105vw;
+        position: absolute !important;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+
+}

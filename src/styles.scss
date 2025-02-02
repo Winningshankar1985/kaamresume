@@ -1,0 +1,415 @@
+/* You can add global styles to this file, and also import other style files */
+// @import '@angular/material/theming';
+/* You can add global styles to this file, and also import other style files */
+// @import url('https://fonts.googleapis.com/css2?family=Inter:slnt:wght@-10..0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&family=Kushan+Script&family=Handlee&family=Raleway:wght@400;700&display=swap');
+// @import '@fontsource/inter/variable.css';
+
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import '~quill/dist/quill.core.css';
+// @import '~quill/dist/quill.snow.css';
+// @import './assets/login-v2/css/owl.carousel.min.css';
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+// @import './assets/login-v2/css/style.css';
+// @import './assets/login-v2/css/aos.css';
+// @import './assets/login-v2/css/responsive.css';
+// @import './assets/login-v2/css/bootstrap.min.css';
+// @import './assets/login-v2/css/icofont.min.css';
+// @import './assets/login-v2/css/magnific-popup.min.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, .32);
+    height: calc(100% + 500px) !important;
+    min-height: 100% !important;
+    width: calc(100% + 100px) !important;
+}
+
+@media (min-width: 50px) {
+
+    // sm
+    .mat-drawer-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative !important;
+        min-width: 100vw !important;
+    }
+}
+
+@media (min-width: 576px) {
+
+    // sm
+    .mat-drawer-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative !important;
+        min-width: 100vw !important;
+    }
+}
+
+@media (min-width: 768px) {
+
+    //md
+    .mat-drawer-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative !important;
+        width: 100% !important;
+        min-width: 100vw !important;
+    }
+}
+
+@media (min-width: 992px) {
+
+    // lg
+    .mat-drawer-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative !important;
+        width: 100% !important;
+        min-width: 100vw !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .mat-drawer-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative !important;
+        width: 100% !important;
+        min-width: 100vw !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .mat-drawer-container {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: relative !important;
+        width: 100% !important;
+        min-width: 100vw !important;
+    }
+}
+
+.oauth-welcome {
+    z-index: 99999 !important;
+}
+
+.theme-colors {
+    background-color: rgb(64, 64, 64) !important;
+    border-color: rgb(64, 64, 64) !important;
+    color: white !important;
+
+}
+
+.mat-mdc-card-header {
+    background-color: rgb(64, 64, 64) !important;
+    border-color: rgb(64, 64, 64) !important;
+    color: white;
+}
+
+.brand-icon {
+    width: 30px;
+    display: inline;
+
+}
+
+.scrollable-h-75 {
+    height: 90vh !important;
+    overflow-y: scroll;
+    max-height: 70vh !important;
+}
+
+.scrollable-h-50 {
+    height: 50vh !important;
+    overflow-y: scroll;
+    max-height: 30vh !important;
+}
+
+.scrollable-h-30 {
+    height: 35vh !important;
+    overflow-y: scroll !important;
+    max-height: 23vh !important;
+}
+
+.scrollable-h-25 {
+    height: 20vh !important;
+    overflow-y: scroll !important;
+    max-height: 16vh !important;
+}
+
+.h-100 {
+    min-height: 100vh !important;
+    min-width: 100% !important;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* align-content: flex-end; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 70px;
+}
+
+.avatar-welcome {
+    border-radius: 50%;
+    height: 15rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* align-content: flex-end; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 70px;
+}
+
+.mat-drawer.mat-drawer-side {
+    z-index: 2;
+
+}
+
+.is-lt-Desktop .mat-drawer-inner-container {
+    width: 3rem !important;
+    height: 100% !important;
+    overflow: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin-left: -10px !important;
+    ;
+}
+
+.is-md-Desktop .mat-drawer-inner-container {
+    width: 3rem !important;
+    height: 100% !important;
+    overflow: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin-left: -10px !important;
+    ;
+}
+
+.is-mobile .mat-drawer-inner-container {
+    width: 2rem !important;
+    height: 100% !important;
+    overflow: auto !important;
+    ;
+    -webkit-overflow-scrolling: touch !important;
+    margin-left: -12px !important;
+}
+
+.mat-drawer-inner-container a {
+    overflow: none !important;
+    margin: 0px !important;
+    display: block;
+    height: 70px;
+}
+
+.tabs .mat-mdc-card-header {
+    display: flex;
+    padding: 16px 16px 0;
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.notification-dialog {
+    outline: 2px solid purple;
+    background: #ffffff !important;
+    color: #we32se !important;
+}
+
+.cursor {
+    cursor: pointer !important;
+}
+
+.custom-text-white:hover {
+    color: #ffffff !important;
+}
+
+.custom-heading-L {
+    font-size: 5.7rem !important;
+    font-weight: 900 !important;
+    line-height: 10rem !important;
+}
+
+.custom-subheading-L {
+    font-size: 3.858rem !important;
+    font-weight: 700 !important;
+    line-height: 5rem !important;
+}
+
+.custom-content-M-heavy {
+    font-size: 3.25rem !important;
+    font-weight: 700 !important;
+    line-height: 5.188rem !important;
+}
+
+.custom-content-M-light {
+    font-size: 2.25rem !important;
+    font-weight: lighter !important;
+    line-height: 4.188rem !important;
+}
+
+.custom-content-xs-heavy {
+    font-size: 2.938rem !important;
+    font-weight: 500 !important;
+    line-height: 3.188rem !important;
+}
+
+.custom-content-xs-light {
+    font-size: 2rem !important;
+    font-weight: lighter !important;
+    line-height: 3.188rem !important;
+}
+
+.is-shown {
+    padding: 10px;
+}
+
+.is-shown .mat-drawer-inner-container {
+    width: 100vw;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+}
+
+.is-hidden .mat-drawer-content {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    margin-left: 85px;
+}
+
+.is-lt-Desktop .container-body {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: inherit;
+    margin-left: 7rem;
+    margin-top: 1.285rem;
+    margin-bottom: 1.285rem;
+
+}
+
+.is-tablet .container-body {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: inherit;
+    margin-left: 4rem;
+    margin-top: 1.285rem;
+    margin-bottom: 1.285rem;
+
+}
+
+.is-md-Desktop .container-body {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: inherit;
+    margin-left: 4rem;
+    margin-top: 1.285rem;
+    margin-bottom: 1.285rem;
+
+}
+
+.is-mobile .container-body {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: auto;
+    // margin-left: 85px;
+    padding: 1.835rem !important;
+}
+
+.is-lt-Desktop .toolbar-adjuster {
+    width: 100vw;
+    margin-left: 85px
+}
+
+.is-md-Desktop .toolbar-adjuster {
+    width: 100vw;
+    // margin-left: 85px
+}
+
+.is-mobile .toolbar-adjuster {
+    width: 100vw;
+}
+
+.is-lt-Desktop .container-footer {
+
+    // margin: 0rem 5rem 8rem 7rem;
+    // width: 100vw;
+    display: flex;
+    justify-content: center;
+    bottom: 0 !important;
+    position: relative !important;
+}
+
+.is-md-Desktop .container-footer {
+
+    // margin: 0rem 5rem 8rem 7rem;
+    // width: 100vw;
+    display: flex;
+    justify-content: center;
+    bottom: 0 !important;
+    position: relative !important;
+}
+
+.is-shown .mat-drawer-content {
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+
+    justify-content: end !important;
+}
+
+::ng-deep mat-form-field {
+    width: 100%;
+}

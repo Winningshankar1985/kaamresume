@@ -1,0 +1,76 @@
+* {
+    font-family: 'Raleway', sans-serif !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 1em;
+
+
+}
+.banner_section1 {
+    /*margin-top: 70px;*/
+    padding-top: 170px;
+    padding-bottom: 250px;
+    position: relative;
+    width: 100% !important;
+    min-width: 100vw !important;    
+}
+.pointer {
+    cursor: pointer;
+}
+
+.s-65 {
+    font-size: 65px;
+
+}
+
+.s-90 {
+    font-size: 7em;
+}
+
+.s-40 {
+    font-size: 40px;
+
+}
+
+.s-30 {
+    font-size: 32px;
+}
+
+.s-28 {
+    font-size: 28px;
+}
+
+.wgt-900 {
+    font-weight: 900;
+}
+
+.wgt-700 {
+    font-weight: 700;
+}
+.f-kaushan {
+    color: #92278f;
+    font-family: "kaushan script", cursive !important;
+    font-weight: 700;
+}
+
+.f-handlee {
+    color: #92278f !important;
+    font-family: "Handlee", cursive !important;
+    font-weight: 700;
+}
+.mt-minus-50 {
+    margin-top: -50px;
+}
+.bg-dark1{
+        width: 100% !important;
+        min-width: 100vw !important;
+}
+.bg-dark1 {
+    background-color: rgb(64, 64, 64) !important;
+    border-color: rgb(64, 64, 64) !important;
+    height: auto !important;
+    width: 100% !important;
+    min-width: 100vw !important;
+}

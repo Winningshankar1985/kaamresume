@@ -1,0 +1,36 @@
+<!-- <mat-tab-group [@.disabled]="false" (selectedTabChange)="onTabChanged($event)">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon>subscriptions</mat-icon>Subscription
+        </ng-template>
+        <app-subscription ngSkipHydration></app-subscription>
+    
+    </mat-tab>
+    <mat-tab >
+        <ng-template mat-tab-label>
+            <mat-icon>receipt_long</mat-icon>Invoice
+        </ng-template>
+        <app-invoice ngSkipHydration></app-invoice>
+    </mat-tab>
+
+</mat-tab-group> -->
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" class="mt-2">
+ <a *ngFor="let nav of links"
+  mat-tab-link
+  [routerLink]="nav?.link" 
+  [routerLinkActive]="activelink"
+  routerLinkActive 
+  #rla="routerLinkActive" 
+  [active]="rla.isActive"
+  >
+<mat-icon>nav?.icon</mat-icon>
+{{nav?.name}}
+</a>
+
+</nav>
+<mat-tab-nav-panel #tabPanel>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</mat-tab-nav-panel>
+

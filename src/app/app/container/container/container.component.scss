@@ -1,0 +1,91 @@
+.mat-icon {
+    height: 31px !important;
+    width: 37px !important;
+    padding: 9px;
+    color: white;
+}
+
+.sidenav-font {
+    font-size: 1rem !important;
+    font-weight: bolder;
+    color: white;
+}
+
+.spaces {
+    position: relative;
+    top: 10px;
+}
+
+.shadow {
+    box-shadow: inset;
+}
+
+.mat-drawer-inner-container {
+    overflow: none !important;
+}
+
+
+.is-mobile .mat-icon {
+    height: 35px !important;
+    width: 35px !important;
+    padding: 0px;
+}
+
+.is-mobile .avatar {
+    border-radius: 50%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    margin-top: 12px;
+}
+
+.is-lt-Desktop .avatar {
+    border-radius: 50%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    margin-top: 10px;
+}
+.LOGO{
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+}
+.center-overlay{
+    top: 20%;
+        z-index: 20;
+        left: 47%;
+    position: absolute;
+   
+}
+.center-overlay::after{
+  
+    background: rgb(100, 15,100);
+    opacity: 1;
+    pointer-events: none;
+    position:relative;
+   
+}
+.background{
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+}
+.is-hidden{
+    display: none !important;
+}
+.is-show{
+    display: block !important;
+}

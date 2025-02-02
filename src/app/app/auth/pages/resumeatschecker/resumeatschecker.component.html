@@ -1,0 +1,119 @@
+<app-header></app-header>
+<div class="bg-dark1 text-white w-100 banner_section1">
+<!-- mt-minus-70 -->
+    <!-- <span class="h-75">
+        &nbsp;
+    </span> -->
+<div class="container ">
+    
+    <div class="row">
+ <h1 class="s-65 wgt-900 text-white mt-4 mb-3 text-center">WE ARE THE BEST FREE RESUME ATS CHECKER AMONG TOP FREE RESUME CHECKERS</h1>
+ <div class="col-12 col-md-12 col-lg-6 text-center">
+    <p>{{'want to know how good your resume is try our resume score checker. this resume ATS checker is the best among top resume ATS scanner on the whole web. that will give you the approximate resume score which is what this resume ATS scorer is about.'|titlecase}}</p>
+ </div>
+<div class="col-12 col-md-12 col-lg-6 text-center">
+    <p>{{'our tool will precisely tell you where your resume is leaking with resume ATS checker. We also give valuable information on many metrics your resume can shine with our resume ATS scanner. thats why we are the best free ATS checker among top free resume checker available in the market.'|titlecase}}</p>
+</div>
+</div>
+<div class="ml-auto mr-auto">
+    <div id="upload-container" class="upload-container">
+        <div id="seo"></div>
+        <h2 class="score">Analyse Your Resume</h2>
+        <div class="upload-area" id="uploadfile">
+            <input type="file" id="fileElem" accept="application/pdf" onchange="handleFiles(this.files)">
+            <label class="button" for="fileElem">Select a PDF File</label>
+            <p><small>(Should be less than 20MB in PDF format)</small></p>
+        </div>
+    </div>
+    <div id="loader" class="loader card-container justify-content-center" style="display: none;"></div>
+    <span class="text-center">&nbsp;</span><br>
+    <div id="results">
+    
+    </div>
+</div>
+
+</div>
+<div class="text-left">
+    <small class="text-white"><strong>Disclaimer:</strong>
+    {{"Thank you for choosing the ultimate resume ATS checker among top resume ATS scanners."|titlecase}}
+    </small>
+    <small class="text-white">{{"We would like to clarify that sores of the same resume might show ATS score variations for the same resume which is inherent of our AI resume algorithms."|titlecase}} </small>
+    <small class="text-white">{{"the fluctuation in our resume ATS scanner can be attributed to several factors, including ongoing updates to our AI models, shifts in industry preferences. And changes in best practices of resume writing. additionally a controlled randomness is implemented to simulate many scenarios and give a analysis."|titlecase}}</small>
+    <small class="text-white">{{"even though the resume ATS scanner can show minor differences in resume ats scores you can be assured that it is built with the best industry practices."|titlecase}}</small>
+    <small class="text-white">{{"we appreciate your comphrehension of intricacies involved here."|titlecase}}</small>
+</div>
+<div class="mt-3 ">
+    <h2 class="s-65 wgt-900 text-white mt-4 mb-3 text-center lh-1">WANT THE BEST FREE ATS CHECKER TOOL AMONG TOP FREE RESUME
+        CHECKER TOOLS FOR YOUR INSTITUTION OR WEBSITE <br> <a class="pointer f-handlee"  (click)="redirect('tools-resumeatschecker')">Click here</a></h2>
+</div>
+</div>
+    <div class="row_am our_client">
+        <div class="container">
+            <div class="section_title" >
+                <span class="title_badge">Our Pride is that</span>
+                <h2>
+                    <span class="d-block">Our ai Resumes Get</span>
+                    Highest Rankings Here.
+                </h2>
+            </div>
+            <!-- Our Client List -->
+            <ul class="client_list">
+                <li>
+                    <div class="client_logo" >
+                        <img fill ngSrc="../../../../assets/logo/companies/careerbuilder.png" alt="image">
+                    </div>
+                </li>
+                <li>
+                    <div class="client_logo" >
+                        <img fill ngSrc="../../../../assets/logo/companies/glassdoor.png" alt="image">
+                    </div>
+                </li>
+                <li>
+                    <div class="client_logo" >
+                        <img fill ngSrc="../../../../assets/logo/companies/indeed.png" alt="image">
+                    </div>
+                </li>
+                <li>
+                    <div class="client_logo" >
+                        <img fill ngSrc="../../../../assets/logo/companies/linkedin.png" alt="image">
+                    </div>
+                </li>
+                <li>
+                    <div class="client_logo" >
+                        <img fill ngSrc="../../../../assets/logo/companies/monster.png" alt="image">
+                    </div>
+                </li>
+                <li>
+                    <div class="client_logo" >
+                        <img fill ngSrc="../../../../assets/logo/companies/ziprecruiter.png" alt="image">
+                    </div>
+                </li>
+    
+            </ul>
+        </div>
+    </div>
+<div class="eureka-section w-100 p-4 ">
+
+    <div class="container banner_section1">
+        <h1 class="s-65 wgt-900 text-white text-center mt-4 mb-3">KAAMRESUME RESUME ATS CHECKER FAQ:</h1>
+        <ng-container *ngFor="let item of FAQ; let i = index">
+            <div ngbAccordion>
+                <div ngbAccordionItem>
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton>{{item?.question|titlecase}}</button>
+                    </h2>
+                    <div ngbAccordionCollapse>
+                        <div ngbAccordionBody>
+                            <ng-template>
+                                <div [innerHTML]="item?.answer"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<div class="mt-minus-50">
+<app-footer></app-footer>
+</div>

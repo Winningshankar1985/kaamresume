@@ -1,0 +1,21 @@
+
+<div class="container-fluid">
+<div class="m-2">
+<div class="mb-4 mt-3" [formGroup]="editresumeform">
+    <h1 style="text-align: center;color:blueviolet;">Your Resume</h1>
+    <app-text-editor [content]="data2edit" [PlaceholderText]="'Type your skills here, be descriptive ....'">
+    </app-text-editor>
+    <!-- <mat-error *ngIf="editresumeform.controls['resume']?.touched">
+    {{( editresumeform.controls['resume'].errors)?'You have to fill this':''}}</mat-error> -->
+</div>
+</div>
+
+<div  class="row">
+    <div class="col-12 col-lg-12  mt-4">
+        <button class="text-center mt-2 mb-2" mat-raised-button color="primary" (click)="download()">Download
+            PDF</button>
+
+    </div>
+</div>
+
+</div>

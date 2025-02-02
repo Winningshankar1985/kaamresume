@@ -1,0 +1,228 @@
+
+<div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url(../../../assets/img/resume-banner.png); padding: 3rem">
+  <div class="layer text-center ">
+      <header>
+          <div class="row ">
+              <div class="col-2 img-responsive">
+                  <img src="../../../assets/logo/kaamresume_logo_800.png" alt="logo">
+              </div>
+              <div class="col-6 align-self-center text-right">
+                  <!-- <a  class="text-white lead">Get Early Access</a> -->
+              </div>
+          </div>
+      </header>
+      <h1  class="display-3 text-white my-5 custom-heading-L">
+        Revolutionize Your Job Hunt with Our AI-Powered Resume Generator
+      </h1>
+      <p  class="text-white my-4 custom-content-M-heavy">
+        Step into the future of job applications with our AI-powered resume generator. Craft compelling, professional resumes
+        tailored to your career goals. Stand out from the crowd with our ATS-friendly designs.
+      </p>
+      <!-- <a   class="btn google-login-btn my-4 font-weight-bold atlas-cta cta-green" id="g_id_signin" >Get Started</a> -->
+      <button class="btn btn-success cursor text-white text-white btn-custom" (click)="sendtoserver('','log-reg')">Login / Register</button>
+      <br /><p class="text-white mt-2">By clicking above you agree to our <a (click)="openpopup('terms')" class="text-center text-primary cursor">Terms And conditions</a></p>
+    </div>
+</div>
+<!-- three-blcok -->
+<div class="container">
+  <h2 class="text-center font-weight-bold my-5 custom-heading-L">Why Choose Us? Unleashing the Power of AI in Your Job Hunt</h2>
+  <div class="row">
+      <div  class="col-md-4 text-center">
+          <img src="../../../assets/img/smart-protect-1.jpg" alt="Anti-spam" class="mx-auto">
+          <h4>AI-Powered Precision</h4>
+          <p>Our intelligent algorithms ensure your resume hits all the right notes, highlighting your skills and experience in the
+        most impactful way.</p>
+      </div>
+      <div  class="col-md-4 text-center">
+          <img src="../../../assets/img/smart-protect-2.jpg" alt="Phishing Detect" class="mx-auto">
+                <h4>User-Friendly:</h4>
+                <p>With an easy-to-use interface, creating the perfect resume has
+                never been simpler.</p>
+
+      </div>
+      <div class="col-md-4 text-center">
+          <img src="../../../assets/img/smart-protect-3.jpg" alt="Smart Scan" class="mx-auto">
+            <h4>ATS-Friendly Designs</h4>
+            <p>Our templates are designed to sail through Applicant Tracking Systems (ATS), increasing your chances of landing that
+                interview</p>
+      </div>
+  </div>
+</div>
+<!-- feature (skew background) -->
+<div class="jumbotron jumbotron-fluid feature" id="feature-first">
+  <div class="container my-5">
+      <div class="row justify-content-between text-center text-md-left">
+          <div  class="col-md-6">
+              <h2 class="font-weight-bold custom-heading-L">Discover the Future of Resume Building - Sign Up for Free Today</h2>
+              <p class="my-4 custom-content-M-lighter">Get a taste of the future with our AI-powered resume generator. Sign up for free today and explore our smart templates
+            and intuitive interface. See the difference AI can make in your job hunt.</p>
+              <a  class="btn my-4 font-weight-bold atlas-cta cta-blue cursor text-white text-white" (click)="sendtoserver('','log-reg')">Learn More</a>
+          </div>
+          <div  class="col-md-6 align-self-center">
+              <img src="../../../assets/img/feature-1.png" alt="Take a look inside" class="mx-auto d-block">
+          </div>
+      </div>
+  </div>
+</div>
+<!-- feature (green background) -->
+<div class="jumbotron jumbotron-fluid feature" id="feature-last">
+  <div class="container">
+      <div class="row justify-content-between text-center text-md-left">
+          <div  class="col-md-6 flex-md-last">
+              <h2 class="font-weight-bold custom-heading-L">Score High with Our ATS-Optimized Resumes</h2>
+              <p class="my-4 custom-content-M-lighter">
+                Our AI-powered resume generator doesn't just create visually appealing resumes - it crafts resumes that rank high on ATS
+                scores. Stand out from the competition and increase your chances of landing that dream job.
+              </p>
+              <a class="btn my-4 font-weight-bold atlas-cta cta-blue cursor text-white text-white" (click)="sendtoserver('','log-reg')">Learn More</a>
+          </div>
+          <div  class="col-md-6 align-self-center flex-md-first">
+              <img src="../../../assets/img/feature-2.png" alt="Safe and reliable" class="mx-auto d-block">
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- price table -->
+<div class="container " id="price-table">
+  <h2 class="text-center font-weight-bold d-block mb-3">Check our pricing</h2>
+  <div class="row">
+      <div  class="col-md-4 text-center">
+          <h4 class="my-4">BRONZE</h4>
+          <p class="font-weight-bold"> <span class="display-3 font-weight-bold">{{850| currency:'INR'}}</span></p>
+          <ul class="list-unstyled text-center">
+            <li class="text-center">Up to 5 Documents</li>
+            <li class="text-center">Limited Support</li>
+          </ul>
+          <a  class="btn my-4 font-weight-bold atlas-cta cta-ghost cursor custom-text-white" (click)="sendtoserver('','log-reg')">Signup</a>
+      </div>
+      <div class="col-md-4 text-center  rounded" id="price-table__premium">
+          <h4 class="my-4 text-white">SILVER</h4>
+          <p class="font-weight-bold"> <span class="display-3 font-weight-bold text-white">{{1600| currency:'INR'}}</span> </p>
+          <ul class="list-unstyled text-center">
+            <li class="text-center">Up to 10 Documents</li>
+            <li class="text-center">Limited Support</li>
+          </ul>
+          <a  class="btn my-4 font-weight-bold atlas-cta cta-green cursor custom-text-white" (click)="sendtoserver('','log-reg')">Signup</a>
+      </div>
+      <div  class="col-md-4 text-center ">
+          <h4 class="my-4">GOLD</h4>
+          <p class="font-weight-bold"> <span class="display-3 font-weight-bold">{{3000| currency:'INR'}}</span></p>
+          <ul class="list-unstyled text-center">
+            <li class="text-center">Up to 15 Documents</li>
+            <li class="text-center">Unlimited Support</li>
+          </ul>
+          <a  class="btn my-4 font-weight-bold atlas-cta cta-ghost cursor custom-text-white" (click)="sendtoserver('','log-reg')">Signup</a>
+      </div>
+      <br /><p class="mt-4 text-center">By clicking above you agree to our <a (click)="openpopup('terms')" class="text-center text-primary cursor">Terms And conditions</a></p>
+  </div>
+</div>
+<!-- client -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-4 col-md-2  align-self-center">
+              <img src="../../../assets/logo/companies/linkedin.png" class="mx-auto d-block img-responsive img-dimensions">
+          </div>
+          <div class="col-sm-4 col-md-2  align-self-center">
+              <img src="../../../assets/logo/companies/indeed.png" class="mx-auto d-block img-responsive img-dimensions">
+          </div>
+          <div class="col-sm-4 col-md-2  align-self-center">
+              <img src="../../../assets/logo/companies/glassdoor.png" class="mx-auto d-block img-responsive img-dimensions">
+          </div>
+          <div class="col-sm-4 col-md-2  align-self-center">
+              <img src="../../../assets/logo/companies/careerbuilder.png" class="mx-auto d-block img-responsive img-dimensions">
+          </div>
+          <div class="col-sm-4 col-md-2  align-self-center">
+              <img src="../../../assets/logo/companies/monster.png" class="mx-auto d-block img-responsive img-dimensions">
+          </div>
+          <div class="col-sm-4 col-md-2  align-self-center">
+              <img src="../../../assets/logo/companies/ziprecruiter.png" class="mx-auto d-block img-responsive img-dimensions">
+          </div>
+      </div>
+  </div>
+</div>
+<!-- contact -->
+<div class="jumbotron jumbotron-fluid" id="contact" style="background-image: url(../../../assets/img/contact-bk.jpg);">
+  <div class="container my-5">
+      <div class="row justify-content-between">
+          <div class="col-md-6 text-white">
+              <h2 class="font-weight-bold text-white">Contact Us</h2>
+              <p class="my-4 text-white">
+                  For Any Queries<br>
+                  Please, Contact Us.
+              </p>
+              <ul class="list-unstyled">
+                  <li>Legal name: THEGRILLSDEPOT</li>
+                  <li>Email : gsshanker3&#64;gmail.com</li>
+                  <!-- <li>Phone : 361-688-5824</li> -->
+                  <li>Address : 1ST FLOOR, 540/18, NEW NO 33, 2ND B CROSS, 2ST MAIN, ANNAIAH
+                  REDDY LAYOUT, NEAR BUSINESSHUT, BENGALURU, BENGALURU URBAN, KARNATAKA,
+                  560043, BANGALORE NORTH, Karnataka, PIN: 560043</li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+              <form action="https://formsubmit.co/2ee767301f80464027a176aaf369b64e" method="POST" >
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Your Name</label>
+                        <input type="name" name="name" class="form-control" id="name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="Email">Your Email</label>
+                        <input type="email" name="email" class="form-control" id="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                </div>
+                  <button type="submit" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-green my-3">Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="container my-5">
+    <h2 class="font-weight-bold text-white">About Me: </h2>
+  <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL"
+    data-vanity="gsshanker3" data-version="v1"><a class="badge-base__link LI-simple-link"
+      href="https://in.linkedin.com/in/gsshanker3/en?trk=profile-badge">Gowri Shanker</a></div>
+  </div>
+</div>
+
+<!-- copyright -->
+<div class="jumbotron jumbotron-fluid" id="copyright">
+  <div class="container">
+      <div class="row justify-content-between">
+        <!-- <div class="col-md-2 text-white align-self-center text-center text-md-left my-2">
+             
+          </div> -->
+          <div class="col-md-8 d-flex justify-content-between align-content-center">
+            <p class="text-white text-left text-md-left">Copyright © 2024 KAAMRESUME.</p>
+            <span class="text-white  text-center">
+                <a (click)="openpopup('terms')" class="d-inline-block text-center ml-2 cursor">Terms And conditions</a> |
+                <a (click)="openpopup('refunds')" class="d-inline-block text-center ml-2 cursor">Cancellation Policy</a> |
+                <a (click)="openpopup('privacy')" class="d-inline-block text-center ml-2 cursor">Privacy Policy</a>
+
+            </span>
+        
+          
+          </div>
+          <div class="col-md-4 align-self-center text-center text-md-right mb-6" id="social-media">
+              <a href="https://facebook.com" target="_blank" class="d-inline-block text-center ml-2">
+               <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="d-inline-block text-center ml-2">
+                 <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <!-- <a  class="d-inline-block text-center ml-2">
+                <i class="fa fa-medium" aria-hidden="true"></i>
+              </a> -->
+              <a href="https://linkedin.com" target="_blank" class="d-inline-block text-center ml-2">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+

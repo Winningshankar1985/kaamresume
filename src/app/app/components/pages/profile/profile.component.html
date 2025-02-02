@@ -1,0 +1,22 @@
+<div class="container h-100">
+<div class="row">
+ <div class="col-12">
+    
+ <div class="container" [formGroup]="profileForm">
+<div class=" d-flex flex-row  justify-content-center "><img class="avatar " [src]="photourl" /></div> <!--https://zoaibkhan.com/_next/image/?url=%2Fassets%2Fhome%2Fme.webp&w=128&q=75-->
+<span class="text-center form-control-color font-weight-bold"><h3>Your Details </h3></span>
+
+<app-input [required]="true" [label]="'Your name'" formControlName="fullname" ></app-input>
+<mat-error *ngIf="profileForm.controls['fullname'].touched">{{( profileForm.controls['fullname'].errors)?'You have to fill this':''}}</mat-error>
+<app-input [required]="true" [inputType]="'email'" [label]="'Your email'" formControlName="email"></app-input>
+<mat-error *ngIf="profileForm.controls['email'].touched">{{( profileForm.controls['email'].errors)?'Your email is not in correct format':''}}</mat-error>
+<!-- https://www.htmlelements.com/angular/demos/editor/overview/ -->
+<app-text-editor formControlName="bio" [content]="profilebio" [PlaceholderText]="'Enter Your Bio ....'"></app-text-editor>
+<div class="d-flex flex-row  justify-content-center m-1">
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!profileForm.valid">Submit</button>
+</div>
+
+</div>   
+ </div>   
+</div>    
+</div>

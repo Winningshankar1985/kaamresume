@@ -1,0 +1,8 @@
+<div mat-dialog-title class="d-flex justify-content-between theme-colors"><div><h2 class="text-white">Sample Themes</h2></div><div><button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button></div></div>
+<mat-card class="p-3">
+    <mat-card-title><div class="text-center"><h3>{{foundData?.name}}</h3></div></mat-card-title>
+    <mat-card-content class="mt-4" mat-dialog-content>
+        <!-- <embed [src]="domSanitizer.bypassSecurityTrustResourceUrl(foundData?.src)" type="application/pdf" width="100%" height="700px" /> -->
+        <object [data]="pdfSource" width="100%" height="800px" type='application/pdf' ></object>
+    </mat-card-content>
+</mat-card>

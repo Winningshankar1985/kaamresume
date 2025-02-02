@@ -1,0 +1,60 @@
+
+// ::ng-deep html {
+ 
+//     position: relative !important;
+// }
+
+// ::ng-deep html,body {
+//     height: 100% !important;
+//     width: fit-content !important;
+//     margin: 0 !important;
+//     padding: 0 !important;
+//     overflow-x:hidden !important;
+// }
+
+// ::ng-deep body {
+//     margin: 0 !important;
+//     font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
+
+// ::ng-deep body {
+//     margin: 0 !important;
+//     padding: 0 !important;
+//     // width: 100vw !important;
+//     position: absolute !important;
+// }
+.img-custom{
+    position:absolute ;
+    height: 100px;
+}
+.img-custom1 {
+    position: absolute;
+    height: 450px !important;
+}
+.second-block{
+    height: 170px !important;
+    width: 260px !important;
+}
+.img-center-block{
+width: 34.5rem !important;
+// margin: 20px;
+}
+.icon-block{
+    position: relative !important;
+    height: 64px !important;
+   
+}
+.icon-custom{
+    position: relative !important;
+    width: 35px !important;
+    height: 35px !important;
+}
+.custom-spinner{
+    width: 95px !important;
+        height: 95px !important;
+        padding: 10px;
+        margin: 4px;
+}
+.icon-custom{
+    width: 80px;
+}
