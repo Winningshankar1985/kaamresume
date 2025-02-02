@@ -23,6 +23,8 @@ import { authInterceptor } from './shared/authserverinterceptor/authserverinterc
 import { AuthChildGaurd, AuthGaurd } from './shared/gaurds/gaurd.service';
 import { Error404Component } from './auth/pages/error404/error404.component';
 import { ChildcomponentModule } from './childComponents/childcomponent/childcomponent.module';
+import { TablerIconsModule } from 'angular-tabler-icons';
+import * as TablerIcons from 'angular-tabler-icons/icons';
 
 @NgModule({
   declarations: [
@@ -44,8 +46,9 @@ import { ChildcomponentModule } from './childComponents/childcomponent/childcomp
     HttpClientModule,
     NgxStripeModule.forRoot('pk_test_51OODACSIlX5eKJquLWNoSPyZvKHBwoL6J5Cg4v7w6bNCBWofCiAZeFOHIWpqsnHPnRrkKWzZbNEQjiUH3h1Mg10000KYFkmFhP'),
     MatSnackBarModule,
-    // NgOptimizedImage,
+    NgOptimizedImage,
     AuthModule, 
+    TablerIconsModule.pick(TablerIcons),
    
   ],
   providers: [
@@ -53,6 +56,7 @@ import { ChildcomponentModule } from './childComponents/childcomponent/childcomp
     AuthChildGaurd,
     {
       provide: HTTP_INTERCEPTORS,
+      // useClass: InterceptorService,
       useClass: InterceptorService,
       multi: true
   },
@@ -65,7 +69,11 @@ import { ChildcomponentModule } from './childComponents/childcomponent/childcomp
 
     },
     DatePipe,
-    provideClientHydration(withHttpTransferCacheOptions({ includePostRequests: true })), // Important!
+    provideClientHydration(
+      withHttpTransferCacheOptions({
+        includePostRequests: true
+      })
+    ),
     provideHttpClient(withFetch(), withInterceptors([authInterceptor]))
   ],
    

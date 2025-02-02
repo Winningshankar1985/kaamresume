@@ -18,9 +18,14 @@ import { provideClientHydration, withHttpTransferCacheOptions } from '@angular/p
   ],
   providers:[
     provideServerRendering(),
-    provideClientHydration(withHttpTransferCacheOptions({ includePostRequests: true })),  // Must be present!
+    provideClientHydration(
+      withHttpTransferCacheOptions({
+        includePostRequests: true
+      })
+    ),
     provideHttpClient(withFetch(), withInterceptors([authInterceptor]))
   ],
   bootstrap: [AppComponent],
+ 
 })
 export class AppServerModule {}
